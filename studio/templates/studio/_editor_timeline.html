@@ -1,0 +1,11 @@
+
+{% load i18n %}
+<section class="editor-timeline" aria-label="{% translate "Timeline de visualisation" %}">
+  <div class="timeline-heading"><h2>Timeline</h2><span>{% translate "Lecture et navigation" %}</span><strong x-text="time(currentTime)">00:00</strong></div>
+  <div class="timeline-ruler"><span class="timeline-track-label">{% translate "TEMPS" %}</span><div class="timeline-ticks"><template x-for="tick in [0, 1, 2, 3, 4]" :key="tick"><span x-text="time(duration * tick / 4)">00:00</span></template></div></div>
+  <div class="timeline-row"><span class="timeline-track-label">▤ <span>{% translate "VIDÉO" %}</span></span><div class="timeline-lane" @click="seekFromTimeline($event)"><div class="timeline-video-clip" :class="{ 'is-loaded': currentUrl }"><span x-text="filename || '{% translate "Aucune vidéo importée" %}'"></span></div><div class="timeline-playhead" :style="'left:' + playbackPercent + '%'" x-show="duration" aria-hidden="true"></div></div></div>
+  <div class="timeline-row"><span class="timeline-track-label">♪ <span>AUDIO</span></span><div class="timeline-lane timeline-audio-lane" @click="seekFromTimeline($event)"><canvas x-ref="waveform" aria-label="{% translate "Amplitude audio du fichier original" %}" x-show="hasWaveform" x-cloak></canvas><span class="waveform-note" x-show="!hasWaveform" x-text="waveformMessage">{% translate "Importez un fichier pour analyser son audio." %}</span><div class="timeline-playhead" :style="'left:' + playbackPercent + '%'" x-show="duration" aria-hidden="true"></div></div></div>
+  <label class="sr-only" for="timeline-seek">{% translate "Parcourir la timeline" %}</label><input id="timeline-seek" class="timeline-seek" type="range" min="0" :max="duration || 1" step="0.1" :value="currentTime" :disabled="!duration || !currentUrl" @input="seekTo(Number($event.target.value))">
+  <p class="timeline-footnote">{% translate "La timeline permet de parcourir la vidéo. Elle ne modifie pas votre fichier." %}</p>
+  <button type="button" class="timeline-analyze" x-show="canAnalyzeAudio &amp;&amp; selectedVersion === 'original'" :disabled="analyzingAudio" @click="analyzeAudio()" x-cloak x-text="analyzingAudio ? '{% translate "Analyse audio…" %}' : '{% translate "Analyser la waveform originale" %}'">{% translate "Analyser la waveform originale" %}</button>
+</section>

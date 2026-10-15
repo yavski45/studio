@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% load static %}
+{% block title %}{% if auth_mode == 'signup' %}{% translate "Créer un compte" %}{% elif auth_mode == 'reset' %}{% translate "Mot de passe oublié" %}{% else %}{% translate "Connexion" %}{% endif %} — Dublao{% endblock %}
+{% block extra_head %}{% if auth_mode == 'signup' or auth_mode == 'login' %}<link rel="stylesheet" href="{% static 'comptes/auth.css' %}">{% endif %}{% endblock %}
+{% block content %}
+{% if auth_mode == 'signup' or auth_mode == 'login' %}
+<div class="auth-page">
+  <header class="auth-page__header"><a class="brand" href="{% url 'landing:home' %}">{% include 'includes/brand_logo.html' %}</a></header>
+  <section class="auth-page__intro" aria-label="{% translate "Bienvenue sur Dublao" %}">
+    
+    <h1>{% translate "Votre voix." %}<br>{% translate "Un monde de possibilités." %}</h1>
+    
+  </section>
+</div>
+<div class="auth-backdrop" aria-hidden="true"></div>
+<dialog id="auth-dialog" class="auth-dialog{% if auth_mode == 'login' %} auth-dialog--login{% endif %}" open aria-labelledby="auth-title"
+        x-data x-init="$el.close(); $el.showModal(); $nextTick(() => (document.querySelector('#auth-card [aria-invalid=true]') || document.querySelector('#auth-card input:not([type=hidden])'))?.focus())"
+        @cancel.prevent="window.location.href = '{% url 'landing:home' %}'"
+        @click.self="window.location.href = '{% url 'landing:home' %}'">
+  <a class="auth-dialog__close" href="{% url 'landing:home' %}" aria-label="{% translate "Fermer le formulaire" %} {% if auth_mode == 'login' %}{% translate "de connexion" %}{% else %}{% translate "d’inscription" %}{% endif %}">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+  </a>
+  <div class="auth-dialog__layout">
+    <main id="contenu" class="auth-dialog__form">
+      <nav class="auth-dialog__nav"><a class="brand auth-dialog__brand" href="{% url 'landing:home' %}">{% include 'includes/brand_logo.html' %}</a>{% include 'includes/language_switcher.html' with selector_id='auth-interface-language' %}</nav>
+      {% include 'comptes/_auth_card.html' %}
+    </main>
+    <aside class="auth-dialog__visual" aria-label="{% if auth_mode == 'login' %}{% translate "De nouvelles rencontres" %}{% else %}{% translate "Votre scène créative" %}{% endif %}">
+      {% if auth_mode == 'login' %}
+      <img src="{% static 'comptes/images/login-scene.jpg' %}" alt="{% translate "Deux personnes se serrent la main devant une baie vitrée donnant sur la ville" %}" width="3174" height="3640" fetchpriority="high">
+      <div class="auth-dialog__visual-copy">
+        
+        <h2>{% translate "Retrouvez votre" %}<br>{% translate "espace créatif." %}</h2>
+        
+      </div>
+      {% else %}
+      <img src="{% static 'comptes/images/signup-scene.jpg' %}" alt="{% translate "Scène noire avec un podium et des lignes lumineuses roses" %}" width="4000" height="4000" fetchpriority="high">
+      <div class="auth-dialog__visual-copy">
+        
+        <h2>{% translate "Votre prochaine" %}<br>{% translate "voix commence ici." %}</h2>
+        
+      </div>
+      {% endif %}
+    </aside>
+  </div>
+</dialog>
+{% else %}
+<header class="mx-auto flex max-w-6xl items-center justify-between px-6 py-7 sm:px-10">
+  {% include 'includes/language_switcher.html' %}
+  <a class="brand" href="{% url 'landing:home' %}">{% include 'includes/brand_logo.html' %}</a>
+  <a href="{% url 'landing:home' %}" class="text-sm text-[#a5b7ad] hover:text-[#edf5f0]">{% translate "← Retour à l’accueil" %}</a>
+</header>
+<main id="contenu" class="mx-auto grid max-w-6xl gap-8 px-6 pb-12 pt-5 sm:px-10 lg:grid-cols-2 lg:gap-20 lg:py-12">
+  <section class="hidden self-center lg:block" aria-label="{% translate "Bienvenue sur Dublao" %}">
+    
+    <h1 class="!text-[52px] !leading-[1.15] !tracking-[-2px]">{% translate "Votre histoire" %}<br>{% translate "commence ici" %}<span class="text-[#60dda5]">.</span></h1>
+    <p class="mt-5 max-w-sm text-sm leading-7 text-[#a5b7ad]">{% translate "Retrouvez bientôt vos vidéos, leurs nouvelles voix et toutes vos idées dans un même espace." %}</p>
+    <div class="relative mt-9 flex h-52 max-w-md items-center justify-center overflow-hidden rounded-3xl border border-[#2b4035] bg-[#15271d]" aria-hidden="true">
+      <div class="absolute h-72 w-72 rounded-full border border-[#bddbcb]"></div>
+      <div class="absolute h-44 w-44 rounded-full border border-[#bddbcb]"></div>
+      <span class="z-10 rounded-2xl bg-[#131e19] px-6 py-4 text-3xl font-semibold tracking-tight shadow-sm">{% translate "Bonjour" %}<span class="ml-3 text-xs text-[#60dda5]">FR</span></span>
+      <span class="absolute right-4 top-5 rotate-6 rounded-lg bg-[#131e19] px-4 py-2 text-sm shadow-sm">Hello <small class="text-[#60dda5]">EN</small></span>
+      <span class="absolute bottom-5 left-5 -rotate-6 rounded-lg bg-[#131e19] px-4 py-2 text-sm shadow-sm">Hola <small class="text-[#60dda5]">ES</small></span>
+    </div>
+    
+  </section>
+  <div class="mx-auto w-full max-w-md self-center">{% include 'comptes/_auth_card.html' %}</div>
+</main>
+{% endif %}
+{% endblock %}

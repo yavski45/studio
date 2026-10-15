@@ -1,0 +1,1 @@
+<div id="studio-state" hidden {% if job.active %}hx-get="{% url 'studio:status' job.pk %}?view=studio" hx-trigger="every 10s" hx-swap="outerHTML"{% endif %} x-data x-init="$nextTick(() => $dispatch('studio-state', JSON.parse($el.querySelector('script').textContent)))">{{ studio_state|json_script:'studio-state-data' }}</div>

@@ -1,0 +1,7 @@
+{% load i18n %}
+{% if user.is_authenticated %}{% with nav_wallet=user.credit_wallet %}
+<a class="nav-wallet" href="{% url 'credits:wallet' %}" {% if request.resolver_match.namespace == 'credits' %}aria-current="page"{% endif %} {% if live_balance %}:aria-label="'{% translate "Portefeuille :" %} ' + credits(availableUnits) + ' {% translate "crédits disponibles" %}'" :title="credits(availableUnits) + ' {% translate "crédits disponibles" %}'"{% endif %} aria-label="{% translate "Portefeuille :" %} {% if nav_wallet %}{{ nav_wallet.available_credits|floatformat:'-2' }} {% translate "crédits disponibles" %}{% else %}{% translate "solde indisponible" %}{% endif %}" title="{% if nav_wallet %}{{ nav_wallet.available_credits|floatformat:'-2' }} {% translate "crédits disponibles" %}{% else %}{% translate "Solde indisponible" %}{% endif %}">
+  <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 8V5a2 2 0 0 0-2-2H6a3 3 0 0 0 0 6h13a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a3 3 0 0 1-3-3V6"/><path d="M21 12h-5a2 2 0 0 0 0 4h5"/><circle cx="16.5" cy="14" r=".5" fill="currentColor" stroke="none"/></svg>
+  <span class="nav-wallet__balance" aria-hidden="true"{% if live_balance %} x-text="credits(availableUnits)"{% endif %}>{% if nav_wallet %}{{ nav_wallet.available_credits|floatformat:'-2' }}{% else %}—{% endif %}</span>
+</a>
+{% endwith %}{% endif %}

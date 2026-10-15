@@ -1,0 +1,46 @@
+{% extends 'studio/editor_base.html' %}
+{% load i18n %}
+
+{% block title %} Dub Studio{% endblock %}
+{% block editor_sidebar %}
+<div class="editor-panel-heading"><h2>{% translate "Préparer le doublage" %}</h2><span class="editor-section-label">{% translate "01 — IMPORT" %}</span></div>
+<form method="post" action="{% url 'studio:create' %}" enctype="multipart/form-data" x-ref="uploadForm" @submit="handleSubmit($event)" class="editor-upload-form">
+  {% csrf_token %}{{ form.submission_id }}
+  {% for error in form.non_field_errors %}<p role="alert" class="editor-field-error">{{ error }}</p>{% endfor %}
+  {% for error in form.submission_id.errors %}<p role="alert" class="editor-field-error">{{ error }}</p>{% endfor %}
+  {% if not configured %}<p role="status" class="editor-warning">{% translate "Le service de doublage n’est pas encore configuré." %}</p>{% endif %}
+  <details class="editor-settings-section" open data-mobile-collapse><summary>{% translate "Vidéo &amp; projet" %} <span aria-hidden="true">⌄</span></summary>
+    <div class="editor-setting-body">
+      <div class="editor-file-import" @change="importFile($event)"><span aria-hidden="true">↑</span><label for="{{ form.video.id_for_label }}">{% translate "Importer une vidéo" %}</label>{{ form.video }}<p>MP4, MOV, WebM, MKV ou AVI{% if upload_limit_mb %} · {{ upload_limit_mb }} {% translate "Mo maximum" %}{% endif %}</p></div>
+      {% for error in form.video.errors %}<p role="alert" class="editor-field-error">{{ error }}</p>{% endfor %}
+      <dl class="editor-file-info" x-show="filename" x-cloak><div><dt>{% translate "Fichier" %}</dt><dd x-text="filename"></dd></div><div><dt>{% translate "Taille" %}</dt><dd x-text="fileSizeLabel"></dd></div><div><dt>{% translate "Durée" %}</dt><dd x-text="time(originalDuration)"></dd></div></dl>
+      <label class="editor-field-label" for="{{ form.title.id_for_label }}">{% translate "Nom du projet" %}</label>{{ form.title }}{% for error in form.title.errors %}<p role="alert" class="editor-field-error">{{ error }}</p>{% endfor %}
+    </div>
+  </details>
+  <details class="editor-settings-section" open data-mobile-collapse><summary>{% translate "Langues" %} <span aria-hidden="true">⌄</span></summary>
+    <div class="editor-setting-body">
+      <fieldset class="studio-language-picker" x-data="{ sourceDisplayLabel: 'Détection automatique' }" x-init="sourceDisplayLabel = ($el.querySelector('input:checked')?.closest('label').innerText || 'Détection automatique').trim()" @change="sourceDisplayLabel = $event.target.closest('label').innerText.trim(); setSourceLabel(sourceDisplayLabel)">
+        <legend class="editor-field-label">{% translate "Langue originale" %}</legend><details class="studio-source-languages"><summary><span x-text="sourceDisplayLabel">{% translate "Détection automatique" %}</span><span aria-hidden="true">⌄</span></summary>{{ form.source_locale }}</details>
+        {% for error in form.source_locale.errors %}<p role="alert" class="editor-field-error">{{ error }}</p>{% endfor %}
+      </fieldset>
+      <fieldset class="studio-language-picker editor-target-picker" x-data="{ languageSearch: '' }" @change="updateSelection()">
+        <legend class="editor-field-label">{% translate "Langues du doublage" %} <span class="editor-language-count">{{ target_language_count }} {% translate "disponibles" %}</span></legend>
+        <label class="sr-only" for="language-search">{% translate "Rechercher une langue de doublage" %}</label><input id="language-search" class="language-search" type="search" placeholder="{% translate "Rechercher une langue…" %}" x-model="languageSearch" autocomplete="off">
+        <div x-ref="languageOptions">{{ form.target_locales }}</div>
+        <p class="editor-small" x-show="languageSearch &amp;&amp; !Array.from($refs.languageOptions.querySelectorAll('.language-option')).some(label => label.textContent.toLocaleLowerCase('fr').includes(languageSearch.toLocaleLowerCase('fr')))" x-cloak>{% translate "Aucune langue ne correspond à votre recherche." %}</p>
+        {% for error in form.target_locales.errors %}<p role="alert" class="editor-field-error">{{ error }}</p>{% endfor %}
+      </fieldset>
+      <p class="editor-small" aria-live="polite" x-text="selectedLanguages.length + (selectedLanguages.length > 1 ? ' {% translate "langues sélectionnées" %}' : ' {% translate "langue sélectionnée" %}')"></p>
+      <p class="editor-small">{% translate "Doublage automatique. La vidéo doit contenir des paroles audibles." %}</p>
+    </div>
+  </details>
+  <div class="editor-credit-estimate"><div><span>{% translate "Estimation" %}</span><strong x-text="estimate === null ? '—' : estimate + ' {% translate "crédits" %}'">—</strong></div><p x-show="estimate !== null" x-text="minutesPerLanguage + ' {% translate "min facturée(s) ×" %} ' + selectedLanguages.length + ' {% translate "langue(s)" %}'"></p><p>{% translate "1 crédit par minute entamée et par langue. La durée et le solde sont vérifiés par le serveur avant tout envoi au service de doublage." %}</p></div>
+  <div class="editor-warning" x-show="insufficient || frozen" x-cloak><p x-text="frozen ? '{% translate "Votre portefeuille nécessite une vérification." %}' : '{% translate "Votre solde ne couvre pas cette estimation." %}'"></p><a href="{% url 'credits:wallet' %}">{% translate "Acheter des crédits ↗" %}</a></div>
+  <label class="editor-consent">{{ form.consent }} <span>{{ form.consent.label }}</span></label>{% for error in form.consent.errors %}<p role="alert" class="editor-field-error">{{ error }}</p>{% endfor %}
+  <button type="submit" class="button editor-launch" :disabled="{% if not configured %}true || {% endif %}sending || insufficient || (billingEnabled &amp;&amp; frozen)" {% if not configured %}disabled{% endif %}><span x-text="sending ? '{% translate "Import en cours…" %}' : '{% translate "Lancer le doublage" %}'">{% translate "Lancer le doublage" %}</span><span aria-hidden="true">↗</span></button>
+  <p class="editor-small" x-show="sending" x-cloak>{% translate "Gardez cette page ouverte pendant l’import. Le traitement continuera ensuite en arrière-plan." %}</p>
+</form>
+{% endblock %}
+{% block editor_dialog %}
+<dialog class="editor-confirmation" x-ref="confirmation" aria-labelledby="confirm-title" @cancel="launchConfirmed = false"><div><p class="eyebrow">{% translate "CONFIRMER LE DOUBLAGE" %}</p><h2 id="confirm-title">{% translate "Prêt pour de nouvelles voix ?" %}</h2><p><strong x-text="title"></strong></p><dl><div><dt>{% translate "Durée de la vidéo" %}</dt><dd x-text="time(originalDuration)"></dd></div><div><dt>{% translate "Langues sélectionnées" %}</dt><dd x-text="selectedLanguages.length"></dd></div><div><dt>{% translate "Crédits estimés" %}</dt><dd x-text="estimate === null ? '{% translate "Durée à vérifier par le serveur" %}' : estimate"></dd></div><div><dt>{% translate "Crédits disponibles" %}</dt><dd x-text="credits(availableUnits)"></dd></div></dl><p class="editor-small">{% translate "L’estimation est indicative. Le serveur réserve les crédits selon la durée vérifiée avant de lancer le doublage." %}</p><div class="confirmation-actions"><button type="button" @click="$refs.confirmation.close()">{% translate "Revenir au studio" %}</button><button class="button" type="button" @click="confirmLaunch()">{% translate "Confirmer et lancer ↗" %}</button></div></div></dialog>
+{% endblock %}

@@ -1,0 +1,40 @@
+.studio-header{border-bottom:1px solid var(--line)}
+.studio-header nav a{padding:8px 0;transition:color .15s}
+.studio-header nav a:hover{color:var(--green)}
+.studio-job-row{border-bottom:1px solid var(--line);transition:background .15s,padding .15s}
+.studio-job-row:first-child{border-top:1px solid var(--line)}
+.studio-job-row:hover{background:#1a3528;padding-left:12px;padding-right:12px}
+.studio-upload-form{border-top:2px solid var(--green)}
+.studio-upload-form label:has(input[type=checkbox]:checked){background:#1a3528;border-color:var(--green)}
+.studio-upload-form label{transition:background .15s,border-color .15s}
+.studio-context{border-left:1px solid var(--line)}
+@media(max-width:1023px){.studio-context{border-left:0;border-top:1px solid var(--line)}}
+@media(prefers-reduced-motion:reduce){.studio-job-row,.studio-header nav a,.studio-upload-form label{transition:none}}
+.studio-language-help{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:16px;color:#a5b7ad;font-size:12px}
+.studio-language-help p{margin:0}.studio-language-help span{color:#60dda5}
+.studio-source-languages>summary{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:12px 14px;border:1px solid #2b4035;border-radius:12px;cursor:pointer;font-size:13px}
+.studio-source-languages[open]>summary{border-color:#60dda5;background:#1a3528}.studio-source-hint{font-size:11px;color:#60dda5}
+.language-options{display:flex;flex-wrap:wrap;gap:8px}
+.language-options>div{display:contents}
+.language-option{position:relative;display:inline-flex;max-width:100%;cursor:pointer}
+.language-option__input{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.language-option__body{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 10px;border:1px solid #2b4035;border-radius:10px;background:var(--surface);color:#edf5f0;font-size:12px;font-weight:500;transition:background .15s,border-color .15s,transform .15s}
+.language-flag{display:inline-block;width:28px;height:21px;flex-shrink:0;object-fit:cover;border-radius:3px;box-shadow:0 0 0 1px #edf5f010}
+.language-option__check{flex-shrink:0;opacity:0;transition:opacity .15s}
+.language-option:hover .language-option__body{border-color:#60dda5;transform:translateY(-1px)}
+.language-option__input:checked+.language-option__body{border-color:#60dda5;background:#1a3528;color:#60dda5}
+.language-option__input:checked+.language-option__body .language-option__check{opacity:1}
+.language-option__input:focus-visible+.language-option__body{outline:2px solid #60dda5;outline-offset:3px}
+.studio-output-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:28px;margin-top:24px}
+.studio-output{min-width:0}.studio-output-heading{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.studio-player video{display:block;width:100%;aspect-ratio:16/9;border-radius:14px;background:#10201a;object-fit:contain}
+.studio-player-help{margin:12px 0 0;font-size:13px;color:#a5b7ad}
+.studio-player-help button{text-decoration:underline;cursor:pointer;color:#60dda5}
+.studio-output-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:14px}
+.studio-subtitle-link{padding:10px 0;color:#60dda5;font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.studio-result-disclosure{padding:16px 0 28px}
+.studio-result-disclosure>summary{width:fit-content;color:#60dda5;font-size:13px;font-weight:600;cursor:pointer;padding:8px 0}
+.studio-job-entry{border-bottom:1px solid var(--line)}
+.studio-job-entry .studio-job-row{border-bottom:0;border-top:0}.studio-job-entry:first-child{border-top:1px solid var(--line)}
+@media(max-width:480px){.language-option__body{padding:8px;font-size:11px}.language-options{gap:7px}.studio-output-actions .button{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.language-option__body,.language-option__check{transition:none}.language-option:hover .language-option__body{transform:none}}

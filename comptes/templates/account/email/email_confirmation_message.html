@@ -1,0 +1,12 @@
+{% extends 'account/email/dublao_base.html' %}
+{% load i18n %}
+
+{% block email_title %}{% translate "Confirmez votre adresse email — Dublao" %}{% endblock %}
+{% block preheader %}{% translate "Une dernière étape pour confirmer votre adresse email." %}{% endblock %}
+{% block heading %}{% translate "Bienvenue à bord." %}{% endblock %}
+{% block email_content %}<p style="margin:0">{% translate "Votre compte Dublao vous attend. Confirmez votre adresse email pour nous permettre de vous envoyer les informations liées à votre compte." %}</p>{% endblock %}
+{% block email_action %}
+{% if code %}<p style="margin:28px 0;padding:20px;background:#e5f2eb;text-align:center;font-size:30px;letter-spacing:6px;font-weight:bold">{{ code }}</p>
+{% else %}<table role="presentation" cellspacing="0" cellpadding="0" style="margin:28px 0 0"><tr><td style="border-radius:12px;background:#092e20"><a href="{{ activate_url }}" style="display:inline-block;padding:16px 24px;color:#fff;font-size:14px;font-weight:bold;text-decoration:none">{% translate "Confirmer mon adresse email →" %}</a></td></tr></table>{% endif %}
+{% endblock %}
+{% block email_note %}{% translate "Si vous n'avez pas créé de compte Dublao, vous pouvez ignorer cet email." %}{% if activate_url %}<br><br>{% translate "Le bouton ne fonctionne pas ? Copiez ce lien dans votre navigateur :" %}<br><a href="{{ activate_url }}" style="color:#006b4f;word-break:break-all">{{ activate_url }}</a>{% endif %}{% endblock %}

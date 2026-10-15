@@ -1,0 +1,5 @@
+{% extends 'comptes/status.html' %}
+{% load i18n %}
+
+{% block status_title %}{% translate "Connexion Google interrompue" %}{% endblock %}
+{% block status_content %}<h2 class="!text-3xl !tracking-tight">{% translate "Connexion interrompue." %}</h2><p class="mt-4 text-sm leading-7 text-[#a5b7ad]">{% translate "La connexion avec Google n’a pas abouti. Réessayez ou connectez-vous par email." %}</p>{% endblock %}

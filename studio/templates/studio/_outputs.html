@@ -1,0 +1,27 @@
+
+{% load i18n %}
+{% if job.outputs.all %}
+<div class="studio-output-grid">
+{% for output in job.outputs.all %}
+<section class="studio-output" aria-label="Version {{ output.display_name }}">
+  <div class="studio-output-heading">
+    {% if output.flag_url %}<img class="language-flag" src="{{ output.flag_url }}" alt="" width="28" height="21" loading="lazy">{% endif %}
+    <h2 class="!mb-0 !text-base !tracking-tight">{{ output.display_name }}</h2>
+  </div>
+  {% if output.video_content_type %}
+  <div class="studio-player" x-data="{ unavailable: false }">
+    <video controls playsinline preload="{{ preview_preload|default:'none' }}" aria-label="Vidéo doublée en {{ output.display_name }}" @error="unavailable = true" @loadedmetadata="unavailable = false" src="{% url 'studio:watch' job.pk output.pk %}">
+      {% translate "Votre navigateur ne permet pas de lire cette vidéo. Utilisez le lien de téléchargement ci-dessous." %}
+    </video>
+    <p class="studio-player-help" x-cloak x-show="unavailable" role="status">{% translate "La lecture est indisponible." %} <button type="button" @click="unavailable = false; $el.closest('.studio-player').querySelector('video').load()">{% translate "Réessayer" %}</button> {% translate "ou téléchargez la vidéo." %}</p>
+  </div>
+  {% elif output.video %}<p class="mt-3 text-sm text-[#a5b7ad]">{% translate "Ce format est disponible au téléchargement." %}</p>{% endif %}
+  {% if output.error_message %}<p class="mb-0 mt-3 text-sm text-[#a5b7ad]">{% translate output.error_message %}</p>{% endif %}
+  <div class="studio-output-actions">
+    {% if output.video %}<a class="button button-small" href="{% url 'studio:download' job.pk output.pk 'video' %}">{% translate "Télécharger la vidéo" %} <span aria-hidden="true">↓</span></a>{% endif %}
+    {% if output.subtitles %}<a class="studio-subtitle-link" href="{% url 'studio:download' job.pk output.pk 'subtitles' %}">{% translate "Sous-titres SRT" %} <span aria-hidden="true">↓</span></a>{% endif %}
+  </div>
+</section>
+{% endfor %}
+</div>
+{% endif %}

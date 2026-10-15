@@ -1,0 +1,17 @@
+
+{% load i18n %}
+<section id="murf-credit-alert" class="murf-monitor murf-monitor--{{ murf.level }}" hx-get="{% url 'supervision:murf-alert' %}" hx-trigger="every 60s" hx-swap="outerHTML" aria-label="{% translate "Crédits Murf Dub" %}">
+  <div {% if murf.level == 'low' or murf.level == 'empty' or murf.waiting_jobs %}role="alert"{% else %}role="status"{% endif %}>
+    <h2>{% if murf.level == 'empty' %}{% translate "Crédits Murf Dub épuisés" %}{% elif murf.level == 'low' %}{% translate "Recharge Murf Dub à prévoir" %}{% elif murf.level == 'unknown' %}{% translate "Solde Murf Dub à vérifier" %}{% else %}{% translate "Crédits Murf Dub" %}{% endif %}</h2>
+    {% if murf.waiting_jobs %}<p><strong>{{ murf.waiting_jobs }} {% translate "doublage" %}{{ murf.waiting_jobs|pluralize }} {% translate "en attente de recharge Murf." %}</strong> {% translate "Reprise automatique après acceptation par Murf, avec une nouvelle tentative toutes les cinq minutes." %}</p>{% endif %}
+    <p>{% if murf.remaining != None %}<strong>{{ murf.remaining }} {% translate "crédits Murf" %}</strong> {% translate "· dernier solde communiqué." %}{% else %}{% translate "Aucun solde disponible pour cette clé API." %}{% endif %} {% translate "Alerte à" %} {{ murf.threshold }} {% translate "crédits ou moins." %}</p>
+    {% if murf.level == 'empty' %}<p>{% translate "Rechargez Murf Dub pour permettre aux nouveaux doublages de démarrer." %}</p>{% elif murf.level == 'low' %}<p>{% translate "Rechargez votre compte Murf Dub pour éviter une interruption des doublages." %}</p>{% endif %}
+    {% if murf.checked_at %}<small>{% translate "Dernière vérification :" %} {{ murf.checked_at|date:'d/m/Y H:i' }}.</small>{% endif %}
+    {% if murf.stale or murf.error %}<p class="murf-monitor-note">{% if murf.error == 'NO_JOB' %}{% translate "Le solde sera disponible après le suivi d’un premier doublage." %}{% else %}{% translate "Le solde n’a pas été confirmé récemment. Vérifiez également votre compte Murf." %}{% endif %}</p>{% endif %}
+    {% if refresh_requested %}<p role="status">{% if refresh_queued %}{% translate "Vérification demandée. Le résultat apparaîtra au prochain rafraîchissement." %}{% else %}{% translate "La vérification en arrière-plan est indisponible. Vérifiez Celery et Redis." %}{% endif %}</p>{% endif %}
+    <small>{% translate "Ces crédits appartiennent à votre compte Murf, pas aux portefeuilles des utilisateurs." %}</small>
+  </div>
+  <div class="murf-monitor-actions"><a class="button" href="https://dub.murf.ai/" target="_blank" rel="noopener noreferrer">{% translate "Recharger Murf Dub ↗" %}</a>
+    <form method="post" action="{% url 'supervision:murf-refresh' %}" hx-post="{% url 'supervision:murf-refresh' %}" hx-target="#murf-credit-alert" hx-swap="outerHTML" hx-disabled-elt="find button">{% csrf_token %}<button class="text-link" type="submit">{% translate "Vérifier le solde" %}</button></form>
+  </div>
+</section>

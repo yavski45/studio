@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% block status_title %}{% translate "Votre compte" %}{% endblock %} — Dublao{% endblock %}
+{% block content %}
+<header class="mx-auto flex max-w-5xl items-center justify-between px-6 py-7"><a class="brand" href="{% url 'landing:home' %}">{% include 'includes/brand_logo.html' %}</a>{% include 'includes/language_switcher.html' %}</header>
+<main id="contenu" class="mx-auto max-w-lg px-6 py-12"><section class="rounded-3xl border border-[#2b4035] bg-[#131e19] p-8">
+  {% block status_content %}{% endblock %}
+  <a href="{% url 'account_login' %}" class="mt-6 inline-block text-sm font-semibold text-[#60dda5]">{% translate "Retour à la connexion →" %}</a>
+</section></main>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'studio/base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Mon espace — Dublao" %}{% endblock %}
+{% block studio_content %}
+<p class="eyebrow">{% translate "VOTRE ESPACE DUBLAO" %}</p>
+<h1 class="!text-4xl !tracking-tight">{% translate "Bonjour" %}{% if user.first_name %}, {{ user.first_name }}{% endif %}<span>.</span></h1>
+<p class="text-sm text-[#a5b7ad]">{% translate "Retrouvez vos vidéos et préparez leurs prochaines versions." %}</p>
+<section class="account-workspace">
+  <div><p class="eyebrow">STUDIO</p><h2>{% translate "Votre prochain doublage" %}<br>{% translate "commence ici." %}</h2><p>{% translate "Importez une vidéo, choisissez les langues et retrouvez chaque résultat dans votre studio." %}</p><a class="button" href="{% url 'studio:create' %}">{% include "includes/studio_icon.html" %} Studio</a><a class="text-link" href="{% url 'studio:index' %}">{% translate "Voir mes doublages →" %}</a></div>
+  <ol class="account-workflow" aria-label="{% translate "Les étapes du doublage" %}"><li><span>01</span><div><strong>{% translate "Votre vidéo" %}</strong><p>{% translate "Un fichier dans votre espace privé." %}</p></div></li><li><span>02</span><div><strong>{% translate "Vos langues" %}</strong><p>{% translate "Une ou plusieurs versions à produire." %}</p></div></li><li><span>03</span><div><strong>{% translate "Vos résultats" %}</strong><p>{% translate "À regarder et à télécharger." %}</p></div></li></ol>
+</section>
+<div class="account-shortcuts"><a href="{% url 'credits:wallet' %}"><span><strong>{% translate "Mon portefeuille" %}</strong><small>{% translate "Consulter mon solde et acheter des crédits." %}</small></span><span aria-hidden="true">↗</span></a><a href="{% url 'profil_compte' %}"><span><strong>{% translate "Mon profil" %}</strong><small>{% translate "Mettre à jour ma photo et mes informations." %}</small></span><span aria-hidden="true">↗</span></a></div>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends 'comptes/status.html' %}
+{% load i18n %}
+
+{% block status_title %}{% translate "Finaliser votre compte" %}{% endblock %}
+{% block status_content %}<h2 class="!text-3xl !tracking-tight">{% translate "Une dernière étape." %}</h2><p class="mt-4 text-sm leading-7 text-[#a5b7ad]">{% translate "Confirmez les informations de votre compte Google. Si cette adresse possède déjà un compte Dublao, connectez-vous d’abord avec son mot de passe." %}</p><form method="post" class="mt-6 space-y-4">{% csrf_token %}{{ form.as_p }}<button class="button" type="submit">{% translate "Terminer l’inscription" %}</button></form>{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% load static %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'studio/studio.css' %}">
+<link rel="stylesheet" href="{% static 'studio/editor.css' %}">
+<script src="{% static 'studio/editor.js' %}"></script>
+{% endblock %}
+{% block content %} 
+{{ editor_config|json_script:'studio-config' }}
+<div class="pro-studio" x-data="dublaoStudio()" @studio-state.window="syncState($event.detail)">
+  <header class="editor-topbar">
+    <a class="brand" href="{% url 'studio:index' %}" aria-label="{% translate "Dublao, mes doublages" %}">{% include 'includes/brand_logo.html' %}</a>
+    <div class="editor-project"><span class="editor-project__name" x-text="title || 'Studio'">{% if job %}{{ job.title }}{% else %}Studio{% endif %}</span><span class="editor-status" :data-state="status" x-text="statusLabel">{{ editor_config.statusLabel }}</span></div>
+    {% include 'includes/wallet_link.html' with live_balance=True %}
+    {% include 'includes/language_switcher.html' %}
+    <a class="editor-dashboard-link" href="{% url 'studio:index' %}">{% translate "← Mes doublages" %}</a>
+    <details class="app-account" @click.outside="$el.open = false" @keydown.escape="$el.open = false; $refs.accountToggle.focus()"><summary x-ref="accountToggle"><span class="app-avatar" aria-hidden="true">{% if editor_avatar_url %}<img class="editor-avatar" src="{{ editor_avatar_url }}" alt="" width="30" height="30">{% else %}{{ user.first_name|default:user.email|slice:':1'|upper }}{% endif %}</span><span class="sr-only">{% translate "Menu de profil" %}</span><span aria-hidden="true">⌄</span></summary><div class="app-account__menu"><a href="{% url 'profil_compte' %}">{% translate "Mon profil" %}</a><a href="{% url 'credits:wallet' %}">{% translate "Mon portefeuille" %}</a><a href="{% url 'espace_compte' %}">{% translate "Mon espace" %}</a><form method="post" action="{% url 'account_logout' %}">{% csrf_token %}<button type="submit">{% translate "Se déconnecter" %}</button></form></div></details>
+  </header>
+  <main id="contenu" class="editor-layout">
+    <aside class="editor-sidebar" aria-label="{% translate "Paramètres du doublage" %}">{% block editor_sidebar %}{% endblock %}</aside>
+    <section class="editor-workspace" aria-label="{% translate "Lecteur et timeline" %}">
+      {% include 'studio/_editor_player.html' %}
+      {% include 'studio/_editor_timeline.html' %}
+    </section>
+    <aside class="editor-versions" aria-labelledby="versions-heading">
+      <div class="editor-panel-heading"><h2 id="versions-heading">{% translate "Versions" %}</h2><span class="editor-counter" x-text="versions.length || selectedLanguages.length">{{ job.target_locales|length|default:'0' }}</span></div>
+      <button class="version-original" type="button" :class="{ 'is-selected': selectedVersion === 'original' }" :disabled="!originalUrl" @click="selectVersion('original')"><span class="version-original__icon" aria-hidden="true">▤</span><span><strong>{% translate "Vidéo originale" %}</strong><small x-text="sourceLabel">{{ editor_config.sourceLabel }}</small></span><span aria-hidden="true">→</span></button>
+      <p class="editor-small" x-show="mode === 'create'">{% translate "Les versions apparaîtront ici après le lancement du doublage." %}</p>
+      <div class="version-list" x-cloak>
+        <template x-for="version in (mode === 'create' ? selectedLanguages : versions)" :key="version.locale">
+          <section class="version-item" :data-state="version.state || 'waiting'" :class="{ 'is-selected': selectedVersion === version.locale }">
+            <button class="version-select" type="button" :disabled="!version.watchUrl" @click="selectVersion(version.locale)"><img class="language-flag" :src="version.flagUrl" alt="" x-show="version.flagUrl" width="28" height="21"><span><strong x-text="version.name"></strong><small><i class="version-state-dot" aria-hidden="true"></i><span x-text="version.statusLabel || '{% translate "À produire" %}'"></span></small></span><span class="version-play-icon" x-show="version.watchUrl" aria-hidden="true">▷</span></button>
+            <p class="editor-small" x-show="version.errorMessage" x-text="version.errorMessage"></p>
+            <p class="editor-small" x-show="version.downloadUrl && !version.watchUrl">{% translate "Ce format est disponible au téléchargement." %}</p>
+            <div class="version-downloads" x-show="version.downloadUrl || version.subtitleUrl"><a :href="version.downloadUrl" x-show="version.downloadUrl">{% translate "Vidéo ↓" %}</a><a :href="version.subtitleUrl" x-show="version.subtitleUrl">{% translate "Sous-titres ↓" %}</a></div>
+          </section>
+        </template>
+      </div>
+      <div class="versions-empty" x-show="!(versions.length || selectedLanguages.length)"><span aria-hidden="true">文</span><p>{% translate "Une vidéo." %}<br>{% translate "De nouvelles langues." %}</p><small>{% translate "Sélectionnez les langues dans le panneau des paramètres." %}</small></div>
+      <p class="editor-small versions-note" x-show="mode === 'project' && status !== 'completed'">{% translate "Les états « en attente » et « en traitement » suivent l’état du projet. Une version est terminée dès que son fichier est disponible." %}</p>
+      {% if job %}<form method="post" action="{% url 'studio:resume' job.pk %}" x-show="resumeUrl" x-cloak class="editor-resume">{% csrf_token %}<button class="button" type="submit">{% if job.error_code == 'INSUFFICIENT_USER_CREDITS' %}{% translate "Reprendre après recharge" %}{% else %}{% translate "Reprendre la vérification" %}{% endif %}</button><p class="editor-small">{% translate "Cette action concerne le projet entier." %}</p></form>{% endif %}
+    </aside>
+  </main>
+  <div class="editor-notice" x-cloak x-show="notice" x-transition.opacity role="status" aria-live="polite"><span x-text="notice"></span><button type="button" @click="notice = ''" aria-label="{% translate "Fermer la notification" %}">×</button></div>
+  {% if job %}{% include 'studio/_editor_state.html' with studio_state=editor_config %}<noscript><div class="editor-fallback">{% include 'studio/_status.html' %}</div></noscript>{% endif %}
+  {% block editor_dialog %}{% endblock %}
+</div>
+{% endblock %}

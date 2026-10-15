@@ -1,0 +1,2225 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\nLanguage: en\nPlural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "$ / crédit"
+msgstr "$ / credit"
+
+msgid ", en conservant la voix originale."
+msgstr ", preserving the original voice."
+
+msgid "/ jour · maximum"
+msgstr "/ day · maximum"
+
+msgid "01 — IMPORT"
+msgstr "01 — UPLOAD"
+
+msgid "1 crédit par minute entamée et par langue produite."
+msgstr "1 credit per started minute, per output language."
+
+msgid "1 crédit par minute entamée et par langue produite. Les nouveaux achats s’ajoutent à votre portefeuille."
+msgstr "1 credit per started minute, per output language. New purchases add to your wallet."
+
+msgid "1 crédit par minute entamée et par langue. La durée et le solde sont vérifiés par le serveur avant tout envoi au service de doublage."
+msgstr "1 credit per started minute, per language. The server checks the duration and balance before sending anything to the dubbing service."
+
+msgid "1 min 1 s dans deux langues = 4 crédits."
+msgstr "1 min 1 sec in two languages = 4 credits."
+
+msgid "1 min = 1 crédit ; 1 min 1 s = 2 crédits ; 2 min 1 s = 3 crédits."
+msgstr "1 min = 1 credit; 1 min 1 sec = 2 credits; 2 min 1 sec = 3 credits."
+
+msgid "30 jours"
+msgstr "30 days"
+
+msgid "7 jours"
+msgstr "7 days"
+
+msgid "90 jours"
+msgstr "90 days"
+
+msgid "ACHAT DE CRÉDITS"
+msgstr "CREDIT PURCHASE"
+
+msgid "Accompagner vos clients et former vos équipes."
+msgstr "Support your customers and train your teams."
+
+msgid "Accès administrateur"
+msgstr "Administrator access"
+
+msgid "Achat de %(quantity)s crédits"
+msgstr "Purchase of %(quantity)s credits"
+
+msgid "Achat de crédits"
+msgstr "Credit purchase"
+
+msgid "Acheter des crédits"
+msgstr "Buy credits"
+
+msgid "Acheter des crédits ↗"
+msgstr "Buy credits ↗"
+
+msgid "Achetez des crédits quand vous en avez besoin."
+msgstr "Buy credits when you need them."
+
+msgid "Activer le son"
+msgstr "Unmute"
+
+msgid "Actualiser ↗"
+msgstr "Refresh ↗"
+
+msgid "Adapter vos tutoriels logiciels et webinaires."
+msgstr "Adapt your software tutorials and webinars."
+
+msgid "Adapter vos vidéos YouTube et vos interviews."
+msgstr "Adapt your YouTube videos and interviews."
+
+msgid "Adapter vos vidéos marketing à de nouveaux marchés."
+msgstr "Adapt your marketing videos for new markets."
+
+msgid "Administration"
+msgstr "Administration"
+
+msgid "Administration — Dublao"
+msgstr "Administration — Dublao"
+
+msgid "Administration ↗"
+msgstr "Administration ↗"
+
+msgid "Adresse email vérifiée"
+msgstr "Email address verified"
+
+msgid "Afficher"
+msgstr "Show"
+
+msgid "Afficher en"
+msgstr "Display in"
+
+msgid "Afficher en plein écran"
+msgstr "Enter fullscreen"
+
+msgid "Afficher ou masquer le mot de passe"
+msgstr "Show or hide password"
+
+msgid "Ajout de crédits"
+msgstr "Credit added"
+
+msgid "Alerte à"
+msgstr "Alert at"
+
+msgid "Allemand"
+msgstr "German"
+
+msgid "Aller au contenu"
+msgstr "Skip to content"
+
+msgid "Amplitude audio du fichier original"
+msgstr "Original audio amplitude"
+
+msgid "Amplitude réelle de la piste audio originale."
+msgstr "Actual amplitude of the original audio track."
+
+msgid "Analyse audio locale indisponible pour ce fichier volumineux."
+msgstr "Local audio analysis is unavailable for this large file."
+
+msgid "Analyse audio…"
+msgstr "Analyzing audio…"
+
+msgid "Analyse de la vidéo"
+msgstr "Analyzing video"
+
+msgid "Analyser la waveform originale"
+msgstr "Analyze the original waveform"
+
+msgid "Anglais · Australie"
+msgstr "English · Australia"
+
+msgid "Anglais · Inde"
+msgstr "English · India"
+
+msgid "Anglais · Royaume-Uni"
+msgstr "English · United Kingdom"
+
+msgid "Anglais · Écosse"
+msgstr "English · Scotland"
+
+msgid "Anglais · États-Unis"
+msgstr "English · United States"
+
+msgid "Annuler"
+msgstr "Cancel"
+
+msgid "Annulé"
+msgstr "Cancelled"
+
+msgid "Aperçu de la nouvelle photo"
+msgstr "Preview of the new photo"
+
+msgid "Aperçu de votre vidéo"
+msgstr "Preview of your video"
+
+msgid "Appliquer"
+msgstr "Apply"
+
+msgid "Appuyez sur Lecture pour écouter cette version."
+msgstr "Press Play to listen to this version."
+
+msgid "Arabe"
+msgstr "Arabic"
+
+msgid "Au moins"
+msgstr "At least"
+
+msgid "Aucun achat pour le moment."
+msgstr "No purchases yet."
+
+msgid "Aucun doublage pour le moment."
+msgstr "No dubbed videos yet."
+
+msgid "Aucun historique antérieur n’est reconstitué."
+msgstr "Earlier history is not reconstructed."
+
+msgid "Aucun mouvement pour le moment."
+msgstr "No transactions yet."
+
+msgid "Aucun paiement live confirmé sur cette période."
+msgstr "No confirmed live payments during this period."
+
+msgid "Aucun résultat exploitable n’a été reçu."
+msgstr "No usable result was received."
+
+msgid "Aucun solde disponible pour cette clé API."
+msgstr "No balance available for this API key."
+
+msgid "Aucune langue ne correspond à votre recherche."
+msgstr "No languages match your search."
+
+msgid "Aucune parole exploitable n’a été détectée dans la vidéo."
+msgstr "No usable speech was detected in the video."
+
+msgid "Aucune vidéo importée"
+msgstr "No video uploaded"
+
+msgid "Audio prêt à être analysé."
+msgstr "Audio ready to analyze."
+
+msgid "Aux créateurs qui veulent faire découvrir leurs vidéos à de nouvelles communautés, aux formateurs qui souhaitent adapter leurs cours et aux entrepreneurs qui présentent leur offre à des clients internationaux."
+msgstr "Creators introducing their videos to new communities, educators adapting their courses, and entrepreneurs presenting their offering to international customers."
+
+msgid "BIENVENUE DANS VOTRE ESPACE"
+msgstr "WELCOME TO YOUR WORKSPACE"
+
+msgid "Bengali"
+msgstr "Bengali"
+
+msgid "Bienvenue sur Dublao"
+msgstr "Welcome to Dublao"
+
+msgid "Bienvenue sur Dublao : confirmez votre email"
+msgstr "Welcome to Dublao: confirm your email"
+
+msgid "Bienvenue sur Dublao. Vous êtes connecté(e)."
+msgstr "Welcome to Dublao. You are signed in."
+
+msgid "Bienvenue à bord."
+msgstr "Welcome aboard."
+
+msgid "Biographie"
+msgstr "Bio"
+
+msgid "Bonjour"
+msgstr "Hello"
+
+msgid "Bonjour,\n\nConfirmez votre adresse email pour votre compte Dublao."
+msgstr "Hello,\n\nConfirm your email address for your Dublao account."
+
+msgid "Bonjour,\n\nUne réinitialisation du mot de passe de votre compte Dublao a été demandée.\nOuvrez ce lien pour choisir un nouveau mot de passe :"
+msgstr "Hello,\n\nA password reset was requested for your Dublao account.\nOpen this link to choose a new password:"
+
+msgid "Bulgare"
+msgstr "Bulgarian"
+
+msgid "CONFIRMER LE DOUBLAGE"
+msgstr "CONFIRM DUBBING"
+
+msgid "CRÉATEURS DE CONTENU"
+msgstr "CONTENT CREATORS"
+
+msgid "Carte bancaire · Wave · Mobile Money"
+msgstr "Card · Wave · Mobile Money"
+
+msgid "Ce fichier ne peut pas être lu dans ce navigateur, ou son lien a expiré."
+msgstr "This file cannot be played in this browser, or its link has expired."
+
+msgid "Ce format est disponible au téléchargement."
+msgstr "This format is available to download."
+
+msgid "Ce lien a expiré ou a déjà été utilisé."
+msgstr "This link has expired or has already been used."
+
+msgid "Ce lien est invalide ou a expiré."
+msgstr "This link is invalid or has expired."
+
+msgid "Certaines langues n’ont pas pu être doublées. Les résultats disponibles sont conservés."
+msgstr "Some languages could not be dubbed. Available results are preserved."
+
+msgid "Ces crédits appartiennent à votre compte Murf, pas aux portefeuilles des utilisateurs."
+msgstr "These credits belong to your Murf account, not to user wallets."
+
+msgid "Cet accès n’est pas autorisé."
+msgstr "Access is not allowed."
+
+msgid "Cet achat a été créé dans un autre mode de paiement."
+msgstr "This purchase was created in another payment mode."
+
+msgid "Cet achat appartient à un autre mode de paiement. Choisissez un pack pour créer une nouvelle tentative."
+msgstr "This purchase belongs to another payment mode. Choose a pack to create a new attempt."
+
+msgid "Cette action concerne le projet entier."
+msgstr "This action applies to the entire project."
+
+msgid "Cette demande ne peut pas aboutir."
+msgstr "This request could not be completed."
+
+msgid "Cette langue n’a pas pu être doublée."
+msgstr "This language could not be dubbed."
+
+msgid "Cette page est introuvable."
+msgstr "This page could not be found."
+
+msgid "Cette photo est illisible. Choisissez une autre image."
+msgstr "This photo cannot be read. Choose another image."
+
+msgid "Cette tentative nécessite une vérification. Consultez cet achat dans votre historique."
+msgstr "This attempt requires a review. Check this purchase in your history."
+
+msgid "Cette tentative nécessite une vérification. Contactez l’équipe Dublao avant de payer à nouveau."
+msgstr "This attempt requires a review. Contact the Dublao team before paying again."
+
+msgid "Chargement…"
+msgstr "Loading…"
+
+msgid "Chinois mandarin"
+msgstr "Mandarin Chinese"
+
+msgid "Choisi"
+msgstr "Selected"
+
+msgid "Choisir ce pack ↗"
+msgstr "Choose this pack ↗"
+
+msgid "Choisir mes crédits"
+msgstr "Choose my credits"
+
+msgid "Choisir mon mot de passe →"
+msgstr "Choose my password →"
+
+msgid "Choisir une vidéo"
+msgstr "Choose a video"
+
+msgid "Choisissez un nouveau mot de passe pour votre compte Dublao."
+msgstr "Choose a new password for your Dublao account."
+
+msgid "Choisissez une langue différente de celle de la vidéo."
+msgstr "Choose a language different from the video's language."
+
+msgid "Choisissez une ou plusieurs langues pour chaque vidéo dans le studio."
+msgstr "Choose one or more languages for each video in the studio."
+
+msgid "Choisissez une photo JPG, PNG ou WebP."
+msgstr "Choose a JPG, PNG or WebP photo."
+
+msgid "Choisissez une vidéo MP4, MOV, WebM, MKV ou AVI."
+msgstr "Choose an MP4, MOV, WebM, MKV or AVI video."
+
+msgid "Choisissez vos langues"
+msgstr "Choose your languages"
+
+msgid "Choisissez votre pack"
+msgstr "Choose your pack"
+
+msgid "Choisissez."
+msgstr "Choose."
+
+msgid "Code d’erreur"
+msgstr "Error code"
+
+msgid "Commencer"
+msgstr "Get started"
+
+msgid "Commencer avec Dublao"
+msgstr "Get started with Dublao"
+
+msgid "Comment lire ces chiffres"
+msgstr "How to read these figures"
+
+msgid "Comment sont utilisés mes crédits ?"
+msgstr "How are my credits used?"
+
+msgid "Comment ça marche"
+msgstr "How it works"
+
+msgid "Confirmation de l’email"
+msgstr "Email confirmation"
+
+msgid "Confirmer et lancer ↗"
+msgstr "Confirm and start ↗"
+
+msgid "Confirmer l’adresse"
+msgstr "Confirm address"
+
+msgid "Confirmer mon adresse"
+msgstr "Confirm my address"
+
+msgid "Confirmer mon adresse email →"
+msgstr "Confirm my email address →"
+
+msgid "Confirmez les informations de votre compte Google. Si cette adresse possède déjà un compte Dublao, connectez-vous d’abord avec son mot de passe."
+msgstr "Confirm your Google account details. If this address already has a Dublao account, sign in with its password first."
+
+msgid "Confirmez votre adresse email"
+msgstr "Confirm your email address"
+
+msgid "Confirmez votre adresse email — Dublao"
+msgstr "Confirm your email — Dublao"
+
+msgid "Confirmez votre adresse email."
+msgstr "Confirm your email address."
+
+msgid "Confirmez votre email."
+msgstr "Confirm your email."
+
+msgid "Confirmé"
+msgstr "Confirmed"
+
+msgid "Connectez-vous pour retrouver votre espace Dublao."
+msgstr "Sign in to access your Dublao workspace."
+
+msgid "Connexion"
+msgstr "Sign in"
+
+msgid "Connexion Google interrompue"
+msgstr "Google sign-in interrupted"
+
+msgid "Connexion interrompue."
+msgstr "Sign-in interrupted."
+
+msgid "Conseils pour choisir votre mot de passe"
+msgstr "Tips for choosing your password"
+
+msgid "Conserver vos supports et votre progression pédagogique."
+msgstr "Keep your materials and learning sequence."
+
+msgid "Consommés"
+msgstr "Used"
+
+msgid "Consulter mon solde et acheter des crédits."
+msgstr "Check my balance and buy credits."
+
+msgid "Consultez vos emails"
+msgstr "Check your email"
+
+msgid "Consultez vos emails."
+msgstr "Check your email."
+
+msgid "Contactez l’équipe Dublao avant un nouveau doublage ou un achat."
+msgstr "Contact the Dublao team before a new dubbing job or purchase."
+
+msgid "Continuer avec Google"
+msgstr "Continue with Google"
+
+msgid "Continuer le paiement ↗"
+msgstr "Continue payment ↗"
+
+msgid "Continuer vers le paiement"
+msgstr "Continue to payment"
+
+msgid "Conversion indicative au taux saisi : 1 $ ="
+msgstr "Indicative conversion at the entered rate: USD 1 ="
+
+msgid "Coréen"
+msgstr "Korean"
+
+msgid "Couper le son"
+msgstr "Mute"
+
+msgid "Croate"
+msgstr "Croatian"
+
+msgid "Créateurs de contenu"
+msgstr "Content creators"
+
+msgid "Crédits"
+msgstr "Credits"
+
+msgid "Crédits Murf Dub"
+msgstr "Murf Dub credits"
+
+msgid "Crédits Murf Dub épuisés"
+msgstr "Murf Dub credits exhausted"
+
+msgid "Crédits disponibles"
+msgstr "Available credits"
+
+msgid "Crédits estimés"
+msgstr "Estimated credits"
+
+msgid "Crédits réservés"
+msgstr "Reserved credits"
+
+msgid "Créer mon compte"
+msgstr "Create my account"
+
+msgid "Créer un compte"
+msgstr "Create an account"
+
+msgid "Créer une nouvelle tentative →"
+msgstr "Create a new attempt →"
+
+msgid "Créez une fois. Faites-vous comprendre ailleurs. Dublao est pensé pour rapprocher votre contenu de ceux qui veulent le découvrir."
+msgstr "Create once. Be understood elsewhere. Dublao brings your content closer to the people who want to discover it."
+
+msgid "Créez votre compte"
+msgstr "Create your account"
+
+msgid "Créez. Traduisez. Faites résonner vos idées."
+msgstr "Create. Translate. Make your ideas resonate."
+
+msgid "Créé le"
+msgstr "Created on"
+
+msgid "DES IDÉES QUI RAPPROCHENT"
+msgstr "IDEAS THAT BRING US CLOSER"
+
+msgid "DOUBLAGE"
+msgstr "DUBBING"
+
+msgid "DUBLAO · ADMINISTRATION"
+msgstr "DUBLAO · ADMINISTRATION"
+
+msgid "Danois"
+msgstr "Danish"
+
+msgid "Dans"
+msgstr "In"
+
+msgid "Dans combien de langues puis-je doubler ma vidéo ?"
+msgstr "How many languages can I dub my video into?"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "De nouvelles langues."
+msgstr "New languages."
+
+msgid "De nouvelles rencontres"
+msgstr "New connections"
+
+msgid "Demander un nouveau lien"
+msgstr "Request a new link"
+
+msgid "Derniers achats confirmés"
+msgstr "Latest confirmed purchases"
+
+msgid "Dernière vérification :"
+msgstr "Last checked:"
+
+msgid "Des crédits pour vos vidéos. À votre rythme."
+msgstr "Credits for your videos. At your pace."
+
+msgid "Des crédits à votre rythme. Aucun abonnement mensuel."
+msgstr "Credits at your pace. No monthly subscription."
+
+msgid "Des histoires qui traversent les frontières."
+msgstr "Stories that cross borders."
+
+msgid "Deux personnes se serrent la main devant une baie vitrée donnant sur la ville"
+msgstr "Two people shaking hands in front of windows overlooking the city"
+
+msgid "Dollars · USD"
+msgstr "Dollars · USD"
+
+msgid "Donnez à vos histoires la liberté de voyager."
+msgstr "Give your stories the freedom to travel."
+
+msgid "Doublage automatique"
+msgstr "Automatic dubbing"
+
+msgid "Doublage automatique. La vidéo doit contenir des paroles audibles."
+msgstr "Automatic dubbing. The video must contain audible speech."
+
+msgid "Doublage en cours"
+msgstr "Dubbing in progress"
+
+msgid "Doublage facturé"
+msgstr "Dubbing charged"
+
+msgid "Doubler ma vidéo"
+msgstr "Dub my video"
+
+msgid "Doublez vos vidéos dans"
+msgstr "Dub your videos into"
+
+msgid "Doublez vos vidéos dans plusieurs langues avec Dublao. Importez, choisissez vos langues, regardez et téléchargez vos versions."
+msgstr "Dub your videos into multiple languages with Dublao. Upload, choose your languages, watch and download your versions."
+
+msgid "Dublao est pensé pour adapter vos vidéos aux personnes que vous souhaitez toucher, dans leur langue."
+msgstr "Dublao helps you adapt your videos to the people you want to reach, in their language."
+
+msgid "Dublao est un studio de doublage vidéo multilingue. Importez votre vidéo, choisissez une ou plusieurs langues, puis regardez et téléchargez vos versions doublées."
+msgstr "Dublao is a multilingual video dubbing studio. Upload your video, choose one or more languages, then watch and download your dubbed versions."
+
+msgid "Dublao, accueil"
+msgstr "Dublao, home"
+
+msgid "Dublao, mes doublages"
+msgstr "Dublao, my videos"
+
+msgid "Durée"
+msgstr "Duration"
+
+msgid "Durée de la vidéo"
+msgstr "Video duration"
+
+msgid "Durée à vérifier par le serveur"
+msgstr "Duration to be checked by the server"
+
+msgid "Décliner vos cours et modules de formation."
+msgstr "Adapt your courses and training modules."
+
+msgid "Décliner vos tutoriels, Reels et formats courts."
+msgstr "Create new versions of your tutorials, Reels and short videos."
+
+msgid "Déconnexion"
+msgstr "Sign out"
+
+msgid "Découvrir le fonctionnement"
+msgstr "See how it works"
+
+msgid "Découvrir les"
+msgstr "Explore the"
+
+msgid "Déjà un compte ?"
+msgstr "Already have an account?"
+
+msgid "Démonstration doublée :"
+msgstr "Dubbed demo:"
+
+msgid "Démonstration doublée en coréen"
+msgstr "Demo dubbed in Korean"
+
+msgid "Démonstration préenregistrée de doublage"
+msgstr "Prerecorded dubbing demo"
+
+msgid "Détail des"
+msgstr "Details for the"
+
+msgid "Détection automatique"
+msgstr "Automatic detection"
+
+msgid "ENTREPRENEURS & ENTREPRISES"
+msgstr "ENTREPRENEURS & BUSINESSES"
+
+msgid "En attente"
+msgstr "Queued"
+
+msgid "En attente de confirmation"
+msgstr "Awaiting confirmation"
+
+msgid "En attente du service"
+msgstr "Waiting for the service"
+
+msgid "En cours"
+msgstr "In progress"
+
+msgid "En traitement"
+msgstr "Processing"
+
+msgid "Enregistrement…"
+msgstr "Saving…"
+
+msgid "Enregistrer le mot de passe"
+msgstr "Save password"
+
+msgid "Enregistrer mon profil"
+msgstr "Save my profile"
+
+msgid "Entrepreneurs & entreprises"
+msgstr "Entrepreneurs & businesses"
+
+msgid "Envoi au service de doublage"
+msgstr "Sending to dubbing service"
+
+msgid "Envoi en cours…"
+msgstr "Sending…"
+
+msgid "Envoyer le lien"
+msgstr "Send link"
+
+msgid "Espagnol · Espagne"
+msgstr "Spanish · Spain"
+
+msgid "Espagnol · Mexique"
+msgstr "Spanish · Mexico"
+
+msgid "Estimation"
+msgstr "Estimate"
+
+msgid "Estonien"
+msgstr "Estonian"
+
+msgid "Explorer l’aperçu"
+msgstr "Explore the preview"
+
+msgid "FCFA · XOF"
+msgstr "CFA francs · XOF"
+
+msgid "FCFA, après conversion par Genius Pay."
+msgstr "XOF, after conversion by Genius Pay."
+
+msgid "FCFA. Les montants réellement réglés apparaissent dans l’historique."
+msgstr "XOF. The amounts actually paid appear in your history."
+
+msgid "FORMATEURS EN E-LEARNING"
+msgstr "E-LEARNING EDUCATORS"
+
+msgid "Faire découvrir vos vidéos à de nouvelles communautés."
+msgstr "Introduce your videos to new communities."
+
+msgid "Faites comprendre votre produit à des clients, partenaires et équipes qui parlent d’autres langues, à partir des vidéos que vous utilisez déjà."
+msgstr "Help customers, partners and teams who speak other languages understand your product, using the videos you already have."
+
+msgid "Faites entendre votre voix dans leur langue."
+msgstr "Let them hear your voice in their language."
+
+msgid "Faites-vous entendre."
+msgstr "Be heard."
+
+msgid "Faut-il tourner une nouvelle vidéo pour chaque langue ?"
+msgstr "Do I need to film a new video for each language?"
+
+msgid "Fermer la notification"
+msgstr "Dismiss notification"
+
+msgid "Fermer le formulaire"
+msgstr "Close form"
+
+msgid "Fichier"
+msgstr "File"
+
+msgid "Fichier original"
+msgstr "Original file"
+
+msgid "Finaliser votre compte"
+msgstr "Finish setting up your account"
+
+msgid "Finnois"
+msgstr "Finnish"
+
+msgid "Formateurs e-learning"
+msgstr "E-learning educators"
+
+msgid "Français · Canada"
+msgstr "French · Canada"
+
+msgid "Français · France"
+msgstr "French · France"
+
+msgid "Fréquentation"
+msgstr "Traffic"
+
+msgid "Gardez cette page ouverte pendant l’import. Le traitement continuera ensuite en arrière-plan."
+msgstr "Keep this page open while uploading. Processing will then continue in the background."
+
+msgid "Genius Pay n’est pas configuré."
+msgstr "Genius Pay is not configured."
+
+msgid "Genius Pay — mode sandbox."
+msgstr "Genius Pay — sandbox mode."
+
+msgid "Gestion Django ↗"
+msgstr "Django administration ↗"
+
+msgid "Grec"
+msgstr "Greek"
+
+msgid "Heureux de vous revoir"
+msgstr "Welcome back"
+
+msgid "Historique des crédits"
+msgstr "Credit history"
+
+msgid "Hongrois"
+msgstr "Hungarian"
+
+msgid "Hébreu"
+msgstr "Hebrew"
+
+msgid "Import en cours…"
+msgstr "Uploading…"
+
+msgid "Importer ma vidéo"
+msgstr "Upload my video"
+
+msgid "Importer une vidéo"
+msgstr "Upload a video"
+
+msgid "Importez un fichier pour analyser son audio."
+msgstr "Upload a file to analyze its audio."
+
+msgid "Importez un fichier pour le regarder et préparer son doublage."
+msgstr "Upload a file to watch it and prepare dubbing."
+
+msgid "Importez une vidéo, choisissez les langues et retrouvez chaque résultat dans votre studio."
+msgstr "Upload a video, choose the languages and find each result in your studio."
+
+msgid "Importez votre vidéo"
+msgstr "Upload your video"
+
+msgid "Importez-la, choisissez vos langues et retrouvez ses versions ici."
+msgstr "Upload it, choose your languages and find its versions here."
+
+msgid "Importez."
+msgstr "Upload."
+
+msgid "Indicateurs de la période"
+msgstr "Period metrics"
+
+msgid "Indiquez votre email pour recevoir un lien de réinitialisation."
+msgstr "Enter your email to receive a password reset link."
+
+msgid "Indonésien"
+msgstr "Indonesian"
+
+msgid "Informations"
+msgstr "Information"
+
+msgid "Italien"
+msgstr "Italian"
+
+msgid "JPG, PNG ou WebP. Sans limite de poids. Dimensions jusqu’à 4096 × 4096 pixels."
+msgstr "JPG, PNG or WebP. No file size limit. Dimensions up to 4096 × 4096 pixels."
+
+msgid "Japonais"
+msgstr "Japanese"
+
+msgid "Je dispose des droits nécessaires et j’autorise le traitement de cette vidéo par Murf pour son doublage."
+msgstr "I have the necessary rights and authorize Murf to process this video for dubbing."
+
+msgid "LANGUES POUR FAIRE VOYAGER VOTRE CONTENU"
+msgstr "LANGUAGES TO TAKE YOUR CONTENT FURTHER"
+
+msgid "LE DOUBLAGE POUR VOTRE ACTIVITÉ"
+msgstr "DUBBING FOR YOUR WORK"
+
+msgid "La connexion Google sera disponible prochainement."
+msgstr "Google sign-in will be available soon."
+
+msgid "La connexion avec Google n’a pas abouti. Réessayez ou connectez-vous par email."
+msgstr "Google sign-in was not completed. Try again or sign in by email."
+
+msgid "La connexion avec le service n’a pas abouti. Réessayez dans quelques instants."
+msgstr "The service connection could not be completed. Please try again shortly."
+
+msgid "La demande n’a pas abouti à temps. Réessayez dans quelques instants."
+msgstr "The request timed out. Please try again shortly."
+
+msgid "La demande n’a pas abouti. Le serveur a rencontré une erreur. Réessayez dans un instant."
+msgstr "The request did not succeed. The server encountered an error. Try again shortly."
+
+msgid "La demande n’a pas abouti. Réessayez dans un instant."
+msgstr "The request did not succeed. Try again shortly."
+
+msgid "La devise renvoyée par Genius Pay ne correspond pas à celle de ce pack. Contactez l’équipe Dublao avant de payer à nouveau."
+msgstr "The currency returned by Genius Pay does not match this pack. Contact the Dublao team before paying again."
+
+msgid "La durée de cette vidéo ne peut pas être déterminée."
+msgstr "The duration of this video cannot be determined."
+
+msgid "La durée de la vidéo n’a pas pu être vérifiée. Aucun doublage n’a été envoyé et aucun crédit n’a été consommé."
+msgstr "The video duration could not be verified. No dubbing job was sent and no credits were used."
+
+msgid "La langue peut freiner l’accès à une formation. Adaptez vos leçons enregistrées pour que d’autres apprenants puissent suivre vos explications."
+msgstr "Language can be a barrier to learning. Adapt your recorded lessons so more learners can follow your explanations."
+
+msgid "La langue sélectionnée ne correspond pas à la vidéo."
+msgstr "The selected language does not match the video."
+
+msgid "La lecture est indisponible."
+msgstr "Playback is unavailable."
+
+msgid "La lecture n’a pas démarré. Vérifiez le format de la vidéo."
+msgstr "Playback did not start. Check the video format."
+
+msgid "La même intention."
+msgstr "The same intent."
+
+msgid "La photo ne doit pas dépasser 4096 pixels de côté."
+msgstr "The photo must not exceed 4096 pixels on either side."
+
+msgid "La photo n’a pas pu être enregistrée. Réessayez dans un instant."
+msgstr "The photo could not be saved. Try again shortly."
+
+msgid "La recharge sera disponible dès que le paiement sera configuré."
+msgstr "Top-ups will be available when payments are configured."
+
+msgid "La recharge sera disponible prochainement."
+msgstr "Top-ups will be available soon."
+
+msgid "La réception de la vidéo est incertaine. Contactez l’équipe Dublao avant de relancer."
+msgstr "Video delivery is uncertain. Contact the Dublao team before restarting."
+
+msgid "La récupération des résultats nécessite une vérification."
+msgstr "Retrieving the results requires a review."
+
+msgid "La timeline permet de parcourir la vidéo. Elle ne modifie pas votre fichier."
+msgstr "The timeline lets you browse the video. It does not modify your file."
+
+msgid "La vidéo dépasse la limite de %(limit)s Mo."
+msgstr "The video exceeds the %(limit)s MB limit."
+
+msgid "La vidéo ne peut pas être lue. Cliquez sur une langue pour réessayer."
+msgstr "The video cannot be played. Click a language to try again."
+
+msgid "La vidéo n’a pas pu être enregistrée. Réessayez dans un instant."
+msgstr "The video could not be saved. Try again shortly."
+
+msgid "La voix originale de chaque intervenant est conservée dans les versions doublées. Vos paroles changent de langue, votre identité vocale reste reconnaissable."
+msgstr "Each speaker's original voice is preserved in the dubbed versions. Your words change language, while your vocal identity remains recognizable."
+
+msgid "La voix originale, dans une autre langue"
+msgstr "The original voice, in another language"
+
+msgid "La vérification en arrière-plan est indisponible. Vérifiez Celery et Redis."
+msgstr "Background checking is unavailable. Check Celery and Redis."
+
+msgid "Lancer le doublage"
+msgstr "Start dubbing"
+
+msgid "Langue de la vidéo"
+msgstr "Video language"
+
+msgid "Langue de lecture"
+msgstr "Playback language"
+
+msgid "Langue de l’interface"
+msgstr "Interface language"
+
+msgid "Langue originale"
+msgstr "Original language"
+
+msgid "Langues"
+msgstr "Languages"
+
+msgid "Langues demandées"
+msgstr "Requested languages"
+
+msgid "Langues du doublage"
+msgstr "Dubbing languages"
+
+msgid "Langues sélectionnées"
+msgstr "Selected languages"
+
+msgid "Le bouton ne fonctionne pas ? Copiez ce lien dans votre navigateur :"
+msgstr "Button not working? Copy this link into your browser:"
+
+msgid "Le contenu du fichier ne correspond pas à un format vidéo accepté."
+msgstr "The file content does not match an accepted video format."
+
+msgid "Le doublage a échoué. Contactez l’équipe Dublao."
+msgstr "Dubbing failed. Contact the Dublao team."
+
+msgid "Le doublage conserve-t-il ma voix ?"
+msgstr "Does dubbing preserve my voice?"
+
+msgid "Le doublage part de votre vidéo existante : les images restent les mêmes et la parole est adaptée dans une autre langue. Avant de publier, prenez le temps de vérifier le sens, les noms propres et les termes techniques."
+msgstr "Dubbing starts with your existing video: the visuals stay the same and the speech is adapted to another language. Before publishing, check the meaning, names and technical terms."
+
+msgid "Le début d’une conversation"
+msgstr "The start of a conversation"
+
+msgid "Le fichier est vide."
+msgstr "The file is empty."
+
+msgid "Le lien a peut-être changé, ou la page n’existe plus. Votre prochaine vidéo vous attend dans le studio."
+msgstr "The link may have changed, or the page may no longer exist. Your next video is waiting in the studio."
+
+msgid "Le montant renvoyé par Genius Pay ne correspond pas au prix de ce pack. Contactez l’équipe Dublao avant de payer à nouveau."
+msgstr "The amount returned by Genius Pay does not match this pack's price. Contact the Dublao team before paying again."
+
+msgid "Le paiement a été annulé ou n’a pas abouti. Vous pouvez choisir un pack pour réessayer."
+msgstr "Payment was cancelled or not completed. You can choose a pack to try again."
+
+msgid "Le paiement n’a pas abouti. Aucun crédit n’a été ajouté."
+msgstr "Payment was not completed. No credits were added."
+
+msgid "Le plein écran n’est pas disponible dans ce navigateur."
+msgstr "Fullscreen is unavailable in this browser."
+
+msgid "Le serveur est injoignable. Vérifiez votre connexion et réessayez."
+msgstr "The server cannot be reached. Check your connection and try again."
+
+msgid "Le service a refusé ce doublage. Vérifiez sa configuration."
+msgstr "The service rejected this dubbing job. Check its configuration."
+
+msgid "Le service de doublage ne dispose plus de crédits. Contactez l’équipe Dublao."
+msgstr "The dubbing service has run out of credits. Contact the Dublao team."
+
+msgid "Le service de doublage ne dispose plus de crédits. Contactez l’équipe de Dublao."
+msgstr "The dubbing service has run out of credits. Contact the Dublao team."
+
+msgid "Le service de doublage n’est pas encore configuré."
+msgstr "The dubbing service has not been configured yet."
+
+msgid "Le service de paiement est indisponible."
+msgstr "The payment service is unavailable."
+
+msgid "Le service d’email est momentanément indisponible. Réessayez plus tard."
+msgstr "The email service is temporarily unavailable. Please try again later."
+
+msgid "Le service est momentanément indisponible. Une nouvelle vérification est prévue."
+msgstr "The service is temporarily unavailable. Another check is scheduled."
+
+msgid "Le service met trop de temps à répondre."
+msgstr "The service is taking too long to respond."
+
+msgid "Le service ne peut pas répondre pour le moment. Réessayez dans quelques instants."
+msgstr "The service cannot respond right now. Please try again shortly."
+
+msgid "Le solde n’a pas été confirmé récemment. Vérifiez également votre compte Murf."
+msgstr "The balance has not been confirmed recently. Also check your Murf account."
+
+msgid "Le solde sera disponible après le suivi d’un premier doublage."
+msgstr "The balance will be available after tracking the first dubbing job."
+
+msgid "Le studio est momentanément indisponible."
+msgstr "The studio is temporarily unavailable."
+
+msgid "Le suivi a commencé le"
+msgstr "Tracking started on"
+
+msgid "Le suivi commence avec les prochaines visites."
+msgstr "Tracking begins with the next visits."
+
+msgid "Le traitement dure plus longtemps que prévu. Une vérification est nécessaire."
+msgstr "Processing is taking longer than expected. A review is required."
+
+msgid "Lecteur du studio"
+msgstr "Studio player"
+
+msgid "Lecteur et timeline"
+msgstr "Player and timeline"
+
+msgid "Lecture et navigation"
+msgstr "Playback and navigation"
+
+msgid "Les 50 derniers mouvements de crédits"
+msgstr "The 50 most recent credit transactions"
+
+msgid "Les crédits réservés ont été libérés."
+msgstr "Reserved credits have been released."
+
+msgid "Les crédits réservés pour ce projet ont été libérés."
+msgstr "The credits reserved for this project have been released."
+
+msgid "Les informations du paiement ne correspondent pas à cet achat."
+msgstr "The payment information does not match this purchase."
+
+msgid "Les informations renvoyées par Genius Pay ne correspondent pas à cet achat. Ce paiement nécessite une vérification. Contactez l’équipe Dublao avant de payer à nouveau."
+msgstr "The information returned by Genius Pay does not match this purchase. This payment requires a review. Contact the Dublao team before paying again."
+
+msgid "Les nouveaux achats s’ajoutent à votre portefeuille. Les crédits sont ajoutés uniquement après confirmation du paiement."
+msgstr "New purchases add to your wallet. Credits are added only after payment is confirmed."
+
+msgid "Les nouveaux paiements sont des tests et n’ajoutent aucun crédit utilisable. Vos crédits déjà acquis restent disponibles."
+msgstr "New payments are tests and do not add usable credits. Your previously purchased credits remain available."
+
+msgid "Les recettes correspondent aux prix des packs achetés. Les remboursements sont déduits à leur date de confirmation. Les frais Genius Pay, les coûts Murf et les autres dépenses ne sont pas déduits : ce montant n’est pas un bénéfice."
+msgstr "Revenue corresponds to purchased pack prices. Refunds are deducted on their confirmation date. Genius Pay fees, Murf costs and other expenses are not deducted: this amount is not profit."
+
+msgid "Les sous-titres affichent le texte à l’écran. Le doublage permet d’écouter les explications dans une autre langue, notamment pour suivre un tutoriel ou une démonstration sans lire chaque phrase."
+msgstr "Subtitles display text on screen. Dubbing lets you listen to explanations in another language, for example to follow a tutorial or demo without reading every sentence."
+
+msgid "Les statuts s’actualisent automatiquement"
+msgstr "Statuses update automatically"
+
+msgid "Les versions apparaîtront ici après le lancement du doublage."
+msgstr "Versions will appear here after dubbing starts."
+
+msgid "Les versions disponibles peuvent être sélectionnées dans le panneau de droite."
+msgstr "Available versions can be selected in the panel on the right."
+
+msgid "Les étapes du doublage"
+msgstr "Dubbing steps"
+
+msgid "Les états « en attente » et « en traitement » suivent l’état du projet. Une version est terminée dès que son fichier est disponible."
+msgstr "Queued and processing states follow the project's status. A version is completed as soon as its file is available."
+
+msgid "Letton"
+msgstr "Latvian"
+
+msgid "Libérés"
+msgstr "Released"
+
+msgid "Lire la vidéo"
+msgstr "Play video"
+
+msgid "Lituanien"
+msgstr "Lithuanian"
+
+msgid "Localiser vos démonstrations et présentations commerciales."
+msgstr "Localize your demos and sales presentations."
+
+msgid "L’achat sera disponible après vérification de votre portefeuille."
+msgstr "Purchases will be available after your wallet is reviewed."
+
+msgid "L’audio de ce format ne peut pas être analysé par ce navigateur."
+msgstr "This browser cannot analyze audio in this format."
+
+msgid "L’envoi a été interrompu. Une vérification est nécessaire avant tout nouvel envoi."
+msgstr "Delivery was interrupted. A review is required before sending again."
+
+msgid "L’envoi n’a pas pu être confirmé. Contactez l’équipe Dublao avant de relancer."
+msgstr "Delivery could not be confirmed. Contact the Dublao team before restarting."
+
+msgid "L’estimation est indicative. Le serveur réserve les crédits selon la durée vérifiée avant de lancer le doublage."
+msgstr "This is an estimate. The server reserves credits based on the verified duration before starting dubbing."
+
+msgid "MONITEUR VIDÉO"
+msgstr "VIDEO MONITOR"
+
+msgid "Malais"
+msgstr "Malay"
+
+msgid "Me connecter"
+msgstr "Sign in"
+
+msgid "Me déconnecter"
+msgstr "Sign out"
+
+msgid "Me reconnecter →"
+msgstr "Sign in again →"
+
+msgid "Menu de navigation"
+msgstr "Navigation menu"
+
+msgid "Menu de profil"
+msgstr "Profile menu"
+
+msgid "Mes doublages"
+msgstr "My dubbed videos"
+
+msgid "Mes vidéos seront-elles publiques ?"
+msgstr "Will my videos be public?"
+
+msgid "Mettre en pause"
+msgstr "Pause"
+
+msgid "Mettre à jour ma photo et mes informations."
+msgstr "Update my photo and information."
+
+msgid "Mo"
+msgstr "MB"
+
+msgid "Mo maximum"
+msgstr "MB maximum"
+
+msgid "Mode"
+msgstr "Mode"
+
+msgid "Mode test."
+msgstr "Test mode."
+
+msgid "Modifier mon profil"
+msgstr "Edit my profile"
+
+msgid "Moins de complications."
+msgstr "Less hassle."
+
+msgid "Mon achat — Dublao"
+msgstr "My purchase — Dublao"
+
+msgid "Mon compte"
+msgstr "My account"
+
+msgid "Mon espace"
+msgstr "My workspace"
+
+msgid "Mon espace — Dublao"
+msgstr "My workspace — Dublao"
+
+msgid "Mon portefeuille"
+msgstr "My wallet"
+
+msgid "Mon portefeuille — Dublao"
+msgstr "My wallet — Dublao"
+
+msgid "Mon portefeuille ↗"
+msgstr "My wallet ↗"
+
+msgid "Mon profil"
+msgstr "My profile"
+
+msgid "Mon profil — Dublao"
+msgstr "My profile — Dublao"
+
+msgid "Montant du paiement :"
+msgstr "Payment amount:"
+
+msgid "Montant réglé"
+msgstr "Amount paid"
+
+msgid "Mot de passe modifié"
+msgstr "Password changed"
+
+msgid "Mot de passe modifié."
+msgstr "Password changed."
+
+msgid "Mot de passe oublié"
+msgstr "Forgot password"
+
+msgid "Mot de passe oublié ?"
+msgstr "Forgot password?"
+
+msgid "Mouvement"
+msgstr "Transaction"
+
+msgid "Mouvements du portefeuille"
+msgstr "Wallet transactions"
+
+msgid "Navigation du studio"
+msgstr "Studio navigation"
+
+msgid "Navigation mobile"
+msgstr "Mobile navigation"
+
+msgid "Navigation principale"
+msgstr "Main navigation"
+
+msgid "Nom"
+msgstr "Last name"
+
+msgid "Nom du doublage"
+msgstr "Dubbing title"
+
+msgid "Nom du projet"
+msgstr "Project name"
+
+msgid "Non renseigné"
+msgstr "Not provided"
+
+msgid "Norvégien"
+msgstr "Norwegian"
+
+msgid "Nous attendons la confirmation de Genius Pay. Vous pouvez vérifier à nouveau dans un instant."
+msgstr "We are waiting for confirmation from Genius Pay. You can check again shortly."
+
+msgid "Nous ne pouvons pas afficher cette page pour le moment. Réessayez un peu plus tard."
+msgstr "We cannot display this page right now. Please try again a little later."
+
+msgid "Nouveau mot de passe"
+msgstr "New password"
+
+msgid "Nouveau projet"
+msgstr "New project"
+
+msgid "Néerlandais"
+msgstr "Dutch"
+
+msgid "Original"
+msgstr "Original"
+
+msgid "Oui. Créez votre compte, achetez un pack de crédits et importez votre vidéo dans le studio. Une minute entamée coûte 1 crédit par langue produite."
+msgstr "Yes. Create your account, buy a credit pack and upload your video to the studio. Each started minute costs 1 credit per output language."
+
+msgid "Oui. Dublao conserve la voix originale des intervenants pour restituer leurs paroles dans la langue choisie. La parole traduite est générée par l’IA à partir de leur voix, plutôt qu’avec une voix générique choisie dans un catalogue."
+msgstr "Yes. Dublao preserves the speakers' original voices to reproduce their speech in the chosen language. AI generates the translated speech from their voices, rather than using a generic voice from a catalog."
+
+msgid "Ouvrez ce lien :"
+msgstr "Open this link:"
+
+msgid "Ouvrez la conversation avec de nouvelles audiences, dans les langues qui comptent pour vous."
+msgstr "Start a conversation with new audiences, in the languages that matter to you."
+
+msgid "Ouvrez le lien de confirmation reçu dans votre boîte mail pour confirmer votre adresse."
+msgstr "Open the confirmation link in your inbox to confirm your address."
+
+msgid "Ouvrez le lien reçu par email. Pour demander un nouveau lien, reconnectez-vous à votre compte."
+msgstr "Open the link you received by email. To request a new link, sign in again."
+
+msgid "Ouvrez-lui d’autres portes."
+msgstr "Open new doors for it."
+
+msgid "Ouvrir"
+msgstr "Open"
+
+msgid "Ouvrir le studio"
+msgstr "Open the studio"
+
+msgid "Ouvrir mon studio →"
+msgstr "Open my studio →"
+
+msgid "Ouvrir une version :"
+msgstr "Open a version:"
+
+msgid "PAR EXEMPLE"
+msgstr "FOR EXAMPLE"
+
+msgid "PLUS QU’UNE ÉTAPE"
+msgstr "MORE THAN A STEP"
+
+msgid "Pack"
+msgstr "Pack"
+
+msgid "Pages vues"
+msgstr "Page views"
+
+msgid "Paiement confirmé. Vos crédits sont disponibles dans votre portefeuille."
+msgstr "Payment confirmed. Your credits are available in your wallet."
+
+msgid "Paiement de test confirmé. Aucun crédit utilisable n’a été ajouté."
+msgstr "Test payment confirmed. No usable credits were added."
+
+msgid "Paiement non abouti"
+msgstr "Payment not completed"
+
+msgid "Paiement sur Genius Pay"
+msgstr "Payment on Genius Pay"
+
+msgid "Paiement sécurisé"
+msgstr "Secure checkout"
+
+msgid "Paiements live confirmés uniquement · mise à jour"
+msgstr "Confirmed live payments only · updated"
+
+msgid "Paramètres du doublage"
+msgstr "Dubbing settings"
+
+msgid "Parcourir la timeline"
+msgstr "Browse timeline"
+
+msgid "Partez de votre vidéo existante. Retrouvez ses nouvelles versions dans un seul espace."
+msgstr "Start with your existing video. Find all its new versions in one workspace."
+
+msgid "Partiellement terminé"
+msgstr "Partially completed"
+
+msgid "Pas encore de compte ?"
+msgstr "Don't have an account yet?"
+
+msgid "Payer avec Genius Pay"
+msgstr "Pay with Genius Pay"
+
+msgid "Payez pour vos vidéos."
+msgstr "Pay for your videos."
+
+msgid "Payé"
+msgstr "Paid"
+
+msgid "Pendjabi"
+msgstr "Punjabi"
+
+msgid "Photo de profil"
+msgstr "Profile picture"
+
+msgid "Photo non renseignée"
+msgstr "No photo provided"
+
+msgid "Plus de langues."
+msgstr "More languages."
+
+msgid "Polonais"
+msgstr "Polish"
+
+msgid "Ponctuel"
+msgstr "One-time"
+
+msgid "Portefeuille"
+msgstr "Wallet"
+
+msgid "Portefeuille :"
+msgstr "Wallet:"
+
+msgid "Portefeuille en vérification."
+msgstr "Wallet under review."
+
+msgid "Portugais · Brésil"
+msgstr "Portuguese · Brazil"
+
+msgid "Portugais · Portugal"
+msgstr "Portuguese · Portugal"
+
+msgid "Position dans la vidéo"
+msgstr "Video position"
+
+msgid "Prix du pack"
+msgstr "Pack price"
+
+msgid "Projet"
+msgstr "Project"
+
+msgid "Prénom"
+msgstr "First name"
+
+msgid "Préparation du paiement…"
+msgstr "Preparing payment…"
+
+msgid "Préparer le doublage"
+msgstr "Prepare dubbing"
+
+msgid "Présenter votre offre aux clients internationaux."
+msgstr "Present your offering to international customers."
+
+msgid "Présentez votre offre au-delà des frontières."
+msgstr "Present your offering across borders."
+
+msgid "Prêt pour de nouvelles voix ?"
+msgstr "Ready for new voices?"
+
+msgid "Prêt à faire voyager votre contenu ?"
+msgstr "Ready to take your content further?"
+
+msgid "Puis-je déjà doubler une vidéo ?"
+msgstr "Can I dub a video now?"
+
+msgid "Période"
+msgstr "Period"
+
+msgid "Quel que soit votre projet, commencez avec les vidéos que vous avez déjà."
+msgstr "Whatever your project, start with the videos you already have."
+
+msgid "Quelle différence avec les sous-titres ?"
+msgstr "How is this different from subtitles?"
+
+msgid "Quelques mots sur vous. 500 caractères maximum."
+msgstr "A few words about you. Maximum 500 characters."
+
+msgid "Quelques questions,"
+msgstr "A few questions,"
+
+msgid "Qu’est-ce que Dublao ?"
+msgstr "What is Dublao?"
+
+msgid "Recettes après remboursements"
+msgstr "Revenue after refunds"
+
+msgid "Recettes brutes"
+msgstr "Gross revenue"
+
+msgid "Recharge Murf Dub à prévoir"
+msgstr "Murf Dub top-up needed"
+
+msgid "Recharger Murf Dub ↗"
+msgstr "Top up Murf Dub ↗"
+
+msgid "Recharger mon portefeuille"
+msgstr "Top up my wallet"
+
+msgid "Rechargez Murf Dub pour permettre aux nouveaux doublages de démarrer."
+msgstr "Top up Murf Dub so new dubbing jobs can start."
+
+msgid "Rechargez votre compte Murf Dub pour éviter une interruption des doublages."
+msgstr "Top up your Murf Dub account to avoid interrupting dubbing jobs."
+
+msgid "Rechargez votre portefeuille avant de lancer ce doublage. Il faut au moins un crédit disponible par langue."
+msgstr "Top up your wallet before starting this job. You need at least one available credit per language."
+
+msgid "Rechargez votre portefeuille pour lancer un doublage."
+msgstr "Top up your wallet to start dubbing."
+
+msgid "Rechercher une langue de doublage"
+msgstr "Search dubbing languages"
+
+msgid "Rechercher une langue…"
+msgstr "Search languages…"
+
+msgid "Regarder et télécharger les versions"
+msgstr "Watch and download versions"
+
+msgid "Regardez · Téléchargez · Partagez"
+msgstr "Watch · Download · Share"
+
+msgid "Remboursements"
+msgstr "Refunds"
+
+msgid "Remboursé"
+msgstr "Refunded"
+
+msgid "Rendre vos cours accessibles dans d’autres langues."
+msgstr "Make your courses accessible in other languages."
+
+msgid "Renseignez le taux de conversion : nombre de FCFA pour 1 dollar."
+msgstr "Enter the exchange rate: CFA francs per US dollar."
+
+msgid "Reprendre après recharge"
+msgstr "Resume after topping up"
+
+msgid "Reprendre après recharge →"
+msgstr "Resume after topping up →"
+
+msgid "Reprendre la vérification"
+msgstr "Resume verification"
+
+msgid "Reprise automatique après acceptation par Murf, avec une nouvelle tentative toutes les cinq minutes."
+msgstr "Resumes automatically after acceptance by Murf, with another attempt every five minutes."
+
+msgid "Retirer ma photo"
+msgstr "Remove my photo"
+
+msgid "Retour au portefeuille. Le paiement n’est pas encore confirmé ; vous pouvez le reprendre depuis votre historique."
+msgstr "Back to your wallet. Payment has not been confirmed yet; you can resume it from your history."
+
+msgid "Retour en haut ↑"
+msgstr "Back to top ↑"
+
+msgid "Retour à la connexion →"
+msgstr "Back to sign in →"
+
+msgid "Retrouvez bientôt vos vidéos, leurs nouvelles voix et toutes vos idées dans un même espace."
+msgstr "Find your videos, their new voices and all your ideas together in one workspace soon."
+
+msgid "Retrouvez chaque version dans votre espace privé."
+msgstr "Find each version in your private workspace."
+
+msgid "Retrouvez vos paiements et reprenez une tentative en cours."
+msgstr "Find your payments and resume a pending attempt."
+
+msgid "Retrouvez vos vidéos et leurs déclinaisons dans un studio simple à utiliser."
+msgstr "Find your videos and their versions in a studio that is easy to use."
+
+msgid "Retrouvez vos vidéos et préparez leurs prochaines versions."
+msgstr "Find your videos and prepare their next versions."
+
+msgid "Retrouvez votre"
+msgstr "Find your"
+
+msgid "Revenez à l’accueil, puis recommencez votre navigation."
+msgstr "Return to the home page, then try navigating again."
+
+msgid "Revenir au studio"
+msgstr "Back to studio"
+
+msgid "Revenir à l’accueil"
+msgstr "Back to home"
+
+msgid "Roumain"
+msgstr "Romanian"
+
+msgid "Russe"
+msgstr "Russian"
+
+msgid "Réessayer"
+msgstr "Retry"
+
+msgid "Réessayer la lecture"
+msgstr "Retry playback"
+
+msgid "Réessayer l’achat →"
+msgstr "Retry purchase →"
+
+msgid "Réinitialiser votre mot de passe — Dublao"
+msgstr "Reset your password — Dublao"
+
+msgid "Réinitialisez votre mot de passe"
+msgstr "Reset your password"
+
+msgid "Réservation libérée"
+msgstr "Reservation released"
+
+msgid "Réservés"
+msgstr "Reserved"
+
+msgid "Réutiliser vos contenus sans refaire le tournage."
+msgstr "Reuse your content without filming again."
+
+msgid "Sans abonnement."
+msgstr "No subscription."
+
+msgid "Sauvegarde des résultats"
+msgstr "Saving results"
+
+msgid "Scène noire avec un podium et des lignes lumineuses roses"
+msgstr "Dark scene with a podium and pink light lines"
+
+msgid "Se connecter"
+msgstr "Sign in"
+
+msgid "Se déconnecter"
+msgstr "Sign out"
+
+msgid "Serbe"
+msgstr "Serbian"
+
+msgid "Si un compte correspond à cette adresse, un lien de réinitialisation vous sera envoyé. Pensez à regarder vos courriers indésirables."
+msgstr "If an account matches this address, you will receive a password reset link. Remember to check your spam folder."
+
+msgid "Si vous n'avez pas créé de compte Dublao, ignorez cet email.\n\nL'équipe Dublao"
+msgstr "If you did not create a Dublao account, ignore this email.\n\nThe Dublao team"
+
+msgid "Si vous n'avez pas créé de compte Dublao, vous pouvez ignorer cet email."
+msgstr "If you did not create a Dublao account, you can ignore this email."
+
+msgid "Si vous n'avez pas fait cette demande, ignorez cet email. Votre mot de passe reste inchangé."
+msgstr "If you did not make this request, ignore this email. Your password remains unchanged."
+
+msgid "Si vous n'avez pas fait cette demande, ignorez simplement cet email.\nVotre mot de passe reste inchangé tant que vous n'en choisissez pas un nouveau.\n\nL'équipe Dublao"
+msgstr "If you did not make this request, ignore this email.\nYour password remains unchanged until you choose a new one.\n\nThe Dublao team"
+
+msgid "Slovaque"
+msgstr "Slovak"
+
+msgid "Slovène"
+msgstr "Slovenian"
+
+msgid "Solde Murf Dub à vérifier"
+msgstr "Murf Dub balance needs checking"
+
+msgid "Solde indisponible"
+msgstr "Balance unavailable"
+
+msgid "Solde total après"
+msgstr "Total balance after"
+
+msgid "Solutions"
+msgstr "Solutions"
+
+msgid "Souhaitez-vous vous déconnecter ?"
+msgstr "Would you like to sign out?"
+
+msgid "Sous-titres SRT"
+msgstr "SRT subtitles"
+
+msgid "Sous-titres ↓"
+msgstr "Subtitles ↓"
+
+msgid "Statistiques de visites momentanément indisponibles."
+msgstr "Visit statistics are temporarily unavailable."
+
+msgid "Suivez le traitement de votre vidéo, puis regardez et téléchargez chaque version dans votre espace privé."
+msgstr "Follow your video's progress, then watch and download each version in your private workspace."
+
+msgid "Suédois"
+msgstr "Swedish"
+
+msgid "Swahili · Kenya"
+msgstr "Swahili · Kenya"
+
+msgid "Sélectionnez les langues dans le panneau des paramètres."
+msgstr "Select languages in the settings panel."
+
+msgid "TEMPS"
+msgstr "TIME"
+
+msgid "Taille"
+msgstr "Size"
+
+msgid "Tamoul"
+msgstr "Tamil"
+
+msgid "Tarifs"
+msgstr "Pricing"
+
+msgid "Taux : FCFA pour 1 $"
+msgstr "Rate: XOF per USD"
+
+msgid "Tchèque"
+msgstr "Czech"
+
+msgid "Terminer l’inscription"
+msgstr "Complete sign-up"
+
+msgid "Terminé"
+msgstr "Completed"
+
+msgid "Thaï"
+msgstr "Thai"
+
+msgid "Timeline de visualisation"
+msgstr "Playback timeline"
+
+msgid "Total à payer"
+msgstr "Total to pay"
+
+msgid "Tous les achats ↗"
+msgstr "All purchases ↗"
+
+msgid "Traité"
+msgstr "Processed"
+
+msgid "Transmettez votre savoir dans leur langue."
+msgstr "Share your knowledge in their language."
+
+msgid "Turc"
+msgstr "Turkish"
+
+msgid "Type d’achat"
+msgstr "Purchase type"
+
+msgid "Télougou"
+msgstr "Telugu"
+
+msgid "Télécharger la vidéo"
+msgstr "Download video"
+
+msgid "Télécharger la vidéo ↓"
+msgstr "Download video ↓"
+
+msgid "UNE VOIX. UN MONDE DE POSSIBILITÉS."
+msgstr "ONE VOICE. A WORLD OF POSSIBILITIES."
+
+msgid "Ukrainien"
+msgstr "Ukrainian"
+
+msgid "Un achat ponctuel. Aucun abonnement mensuel."
+msgstr "A one-time purchase. No monthly subscription."
+
+msgid "Un achat. De nouvelles possibilités."
+msgstr "One purchase. New possibilities."
+
+msgid "Un email vous attend."
+msgstr "An email is waiting for you."
+
+msgid "Un espace pour toutes vos versions"
+msgstr "One workspace for all your versions"
+
+msgid "Un fichier dans votre espace privé."
+msgstr "A file in your private workspace."
+
+msgid "Un instant…"
+msgstr "One moment…"
+
+msgid "Un module de votre formation obtient une version en espagnol, avec les mêmes démonstrations à l’écran."
+msgstr "A module from your course gets a Spanish version, with the same on-screen demonstrations."
+
+msgid "Un monde de possibilités."
+msgstr "A world of possibilities."
+
+msgid "Un nouveau départ"
+msgstr "A fresh start"
+
+msgid "Un nouveau départ."
+msgstr "A fresh start."
+
+msgid "Un nouveau mot de passe."
+msgstr "A new password."
+
+msgid "Un problème nous interrompt."
+msgstr "Something interrupted us."
+
+msgid "Un stockage privé et des liens temporaires pour accéder à vos contenus."
+msgstr "Private storage and temporary links to access your content."
+
+msgid "Un visage, un nom, quelques mots. Personnalisez votre espace Dublao."
+msgstr "A face, a name, a few words. Make your Dublao workspace your own."
+
+msgid "Une adresse email, un mot de passe, et votre aventure commence."
+msgstr "An email address, a password, and your journey begins."
+
+msgid "Une bonne histoire ne s’arrête pas à une seule langue. Donnez une seconde vie à vos vidéos et faites découvrir votre univers à d’autres communautés."
+msgstr "A good story does not stop at one language. Give your videos a new life and introduce your world to other communities."
+
+msgid "Une dernière étape pour confirmer votre adresse email."
+msgstr "One last step to confirm your email address."
+
+msgid "Une dernière étape pour garder le contact avec Dublao."
+msgstr "One last step to stay in touch with Dublao."
+
+msgid "Une dernière étape."
+msgstr "One last step."
+
+msgid "Une langue sélectionnée n’est pas prise en charge."
+msgstr "A selected language is not supported."
+
+msgid "Une nouvelle version doublée est disponible."
+msgstr "A new dubbed version is available."
+
+msgid "Une ou plusieurs versions à produire."
+msgstr "One or more versions to produce."
+
+msgid "Une réinitialisation du mot de passe de votre compte Dublao a été demandée. Cliquez ci-dessous pour en choisir un nouveau."
+msgstr "A password reset was requested for your Dublao account. Click below to choose a new password."
+
+msgid "Une vidéo."
+msgstr "One video."
+
+msgid "Une vérification est nécessaire avant de reprendre ce doublage. Vos crédits restent réservés."
+msgstr "A review is required before resuming this job. Your credits remain reserved."
+
+msgid "VIDÉO"
+msgstr "VIDEO"
+
+msgid "VOS IDÉES TRAVERSENT LES FRONTIÈRES"
+msgstr "YOUR IDEAS CROSS BORDERS"
+
+msgid "VOS VIDÉOS, SANS FRONTIÈRES"
+msgstr "YOUR VIDEOS, WITHOUT BORDERS"
+
+msgid "VOTRE COMPTE"
+msgstr "YOUR ACCOUNT"
+
+msgid "VOTRE ESPACE DUBLAO"
+msgstr "YOUR DUBLAO WORKSPACE"
+
+msgid "VOTRE HISTOIRE MÉRITE D’ÊTRE ENTENDUE"
+msgstr "YOUR STORY DESERVES TO BE HEARD"
+
+msgid "Version doublée"
+msgstr "Dubbed version"
+
+msgid "Versions"
+msgstr "Versions"
+
+msgid "Vidéo &amp; projet"
+msgstr "Video &amp; project"
+
+msgid "Vidéo originale"
+msgstr "Original video"
+
+msgid "Vidéo sélectionnée. Vérifiez les langues avant de lancer le doublage."
+msgstr "Video selected. Check the languages before starting dubbing."
+
+msgid "Vidéo ↓"
+msgstr "Video ↓"
+
+msgid "Vietnamien"
+msgstr "Vietnamese"
+
+msgid "Visiteurs"
+msgstr "Visitors"
+
+msgid "Visiteurs &amp; recettes"
+msgstr "Visitors &amp; revenue"
+
+msgid "Visiteurs / jour · maximum"
+msgstr "Visitors / day · maximum"
+
+msgid "Visiteurs estimés par navigateur, grâce à un identifiant aléatoire. Les visites administrateur, les robots identifiables et les rafraîchissements HTMX sont exclus."
+msgstr "Visitors are estimated per browser using a random identifier. Administrator visits, identifiable bots and HTMX refreshes are excluded."
+
+msgid "Voir mes doublages →"
+msgstr "View my dubbed videos →"
+
+msgid "Voir mon portefeuille →"
+msgstr "View my wallet →"
+
+msgid "Voir toutes les solutions"
+msgstr "Explore all solutions"
+
+msgid "Vos achats"
+msgstr "Your purchases"
+
+msgid "Vos achats, réservations et doublages, en toute transparence."
+msgstr "Your purchases, reservations and dubbing jobs, clearly tracked."
+
+msgid "Vos crédits sont insuffisants pour cette durée et ces langues. Rechargez votre portefeuille puis reprenez ce doublage."
+msgstr "You do not have enough credits for this duration and these languages. Top up your wallet, then resume this job."
+
+msgid "Vos fichiers privés. Vos idées sans frontières."
+msgstr "Your files are private. Your ideas cross borders."
+
+msgid "Vos fichiers restent privés"
+msgstr "Your files stay private"
+
+msgid "Vos fichiers sont stockés dans un espace privé. Seul votre compte peut accéder à vos résultats grâce à des liens temporaires."
+msgstr "Your files are stored privately. Only your account can access your results through temporary links."
+
+msgid "Vos langues"
+msgstr "Your languages"
+
+msgid "Vos nouveaux achats s’ajoutent au solde disponible."
+msgstr "New purchases add to your available balance."
+
+msgid "Vos projets récents"
+msgstr "Your recent projects"
+
+msgid "Vos résultats"
+msgstr "Your results"
+
+msgid "Vos résultats sont conservés dans votre espace privé. Les liens de lecture et de téléchargement sont temporaires."
+msgstr "Your results are kept in your private workspace. Playback and download links are temporary."
+
+msgid "Vos résultats sont conservés dans votre stockage privé. Les liens de téléchargement sont temporaires."
+msgstr "Your results are kept in your private storage. Download links are temporary."
+
+msgid "Vos vidéos, leurs langues et leurs nouvelles audiences."
+msgstr "Your videos, their languages and their new audiences."
+
+msgid "Vos vidéos, vos voix, vos prochaines rencontres."
+msgstr "Your videos, your voices, your next connections."
+
+msgid "Vos vidéos."
+msgstr "Your videos."
+
+msgid "Votre adresse doit être vérifiée avant de pouvoir accéder à votre espace Dublao."
+msgstr "Your address must be verified before you can access your Dublao workspace."
+
+msgid "Votre code de confirmation :"
+msgstr "Your confirmation code:"
+
+msgid "Votre communauté peut aller plus loin."
+msgstr "Your community can grow further."
+
+msgid "Votre compte"
+msgstr "Your account"
+
+msgid "Votre compte Dublao"
+msgstr "Your Dublao account"
+
+msgid "Votre compte Dublao vous attend. Confirmez votre adresse email pour nous permettre de vous envoyer les informations liées à votre compte."
+msgstr "Your Dublao account is waiting for you. Confirm your email address so we can send you information about your account."
+
+msgid "Votre compte ne permet pas d’accéder à cette page. Revenez à votre espace pour continuer."
+msgstr "Your account cannot access this page. Return to your workspace to continue."
+
+msgid "Votre contenu existe déjà."
+msgstr "Your content already exists."
+
+msgid "Votre doublage est en attente temporaire. Il reprendra automatiquement dès que le service sera disponible. Vos crédits restent réservés et ne sont pas consommés."
+msgstr "Your dubbing job is temporarily waiting. It will resume automatically when the service is available. Your credits remain reserved and have not been used."
+
+msgid "Votre démonstration produit en français devient une présentation en anglais pour vos prospects à l’étranger."
+msgstr "Your French product demo becomes an English presentation for prospects abroad."
+
+msgid "Votre espace Dublao, en toute simplicité."
+msgstr "Your Dublao workspace, made simple."
+
+msgid "Votre histoire"
+msgstr "Your story"
+
+msgid "Votre message."
+msgstr "Your message."
+
+msgid "Votre navigateur ne permet pas de lire cette vidéo. Utilisez le lien de téléchargement ci-dessous."
+msgstr "Your browser cannot play this video. Use the download link below."
+
+msgid "Votre navigateur ne prend pas en charge la lecture vidéo."
+msgstr "Your browser does not support video playback."
+
+msgid "Votre navigateur ne prend pas en charge la lecture. Téléchargez la version disponible."
+msgstr "Your browser does not support playback. Download the available version."
+
+msgid "Votre pack"
+msgstr "Your pack"
+
+msgid "Votre paiement est confirmé. Vos crédits sont disponibles dans votre portefeuille."
+msgstr "Your payment is confirmed. Your credits are available in your wallet."
+
+msgid "Votre photo de profil"
+msgstr "Your profile picture"
+
+msgid "Votre portefeuille nécessite une vérification."
+msgstr "Your wallet requires a review."
+
+msgid "Votre portefeuille nécessite une vérification. Contactez l’équipe Dublao."
+msgstr "Your wallet requires a review. Contact the Dublao team."
+
+msgid "Votre première recharge apparaîtra ici, avec son statut de paiement."
+msgstr "Your first top-up will appear here with its payment status."
+
+msgid "Votre première vidéo ouvre de nouvelles possibilités."
+msgstr "Your first video opens up new possibilities."
+
+msgid "Votre prochain doublage"
+msgstr "Your next dubbed video"
+
+msgid "Votre prochaine"
+msgstr "Your next"
+
+msgid "Votre prochaine audience"
+msgstr "Your next audience"
+
+msgid "Votre prochaine vidéo commence ici."
+msgstr "Your next video starts here."
+
+msgid "Votre profil a été mis à jour."
+msgstr "Your profile has been updated."
+
+msgid "Votre recharge"
+msgstr "Your top-up"
+
+msgid "Votre scène créative"
+msgstr "Your creative stage"
+
+msgid "Votre solde ne couvre pas cette estimation."
+msgstr "Your balance does not cover this estimate."
+
+msgid "Votre tutoriel en français devient une version en anglais à partager avec une nouvelle audience."
+msgstr "Your French tutorial becomes an English version to share with a new audience."
+
+msgid "Votre tutoriel, votre présentation ou votre dernière création. Tout commence avec votre contenu."
+msgstr "Your tutorial, presentation or latest creation. It all starts with your content."
+
+msgid "Votre vidéo"
+msgstr "Your video"
+
+msgid "Votre vidéo est enregistrée. Le traitement démarrera dès qu’une place sera disponible."
+msgstr "Your video is saved. Processing will start as soon as a slot is available."
+
+msgid "Votre vidéo se prépare"
+msgstr "Your video is being prepared"
+
+msgid "Votre vidéo, au centre du studio"
+msgstr "Your video, at the center of the studio"
+
+msgid "Votre voix originale, dans une autre langue. Doublez vos créations, vos formations et vos présentations en conservant la voix de chaque intervenant."
+msgstr "Your original voice, in another language. Dub your content, courses and presentations while preserving each speaker's voice."
+
+msgid "Votre voix reste la vôtre"
+msgstr "Your voice stays yours"
+
+msgid "Votre voix."
+msgstr "Your voice."
+
+msgid "Vous choisirez votre moyen de paiement sur une page sécurisée. Le prix peut être converti en FCFA ; le montant à régler y sera indiqué."
+msgstr "You will choose your payment method on a secure checkout page. The price may be converted to XOF; the amount due will be shown there."
+
+msgid "Vous continuerez sur Genius Pay pour choisir votre moyen de paiement. Le prix peut être converti en FCFA ; le montant à régler y sera indiqué."
+msgstr "You will continue to Genius Pay to choose your payment method. The price may be converted to XOF; the amount due will be shown there."
+
+msgid "Vous ne le trouvez pas ? Vérifiez les courriers indésirables. Le message peut prendre quelques instants pour arriver."
+msgstr "Can't find it? Check your spam folder. The message may take a few moments to arrive."
+
+msgid "Vous pourrez modifier ces informations à tout moment."
+msgstr "You can change this information at any time."
+
+msgid "Vous pouvez maintenant vous connecter avec votre nouveau mot de passe."
+msgstr "You can now sign in with your new password."
+
+msgid "Vous pouvez quitter cette page et retrouver votre doublage dans « Mes doublages »."
+msgstr "You can leave this page and find your job under My dubbed videos."
+
+msgid "Vue d’ensemble"
+msgstr "Overview"
+
+msgid "Vérification de l’email"
+msgstr "Email verification"
+
+msgid "Vérification demandée. Le résultat apparaîtra au prochain rafraîchissement."
+msgstr "Check requested. The result will appear on the next refresh."
+
+msgid "Vérification en cours"
+msgstr "Verification in progress"
+
+msgid "Vérification en cours…"
+msgstr "Checking payment…"
+
+msgid "Vérification manuelle nécessaire"
+msgstr "Manual review required"
+
+msgid "Vérification nécessaire"
+msgstr "Review required"
+
+msgid "Vérifier le paiement"
+msgstr "Check payment"
+
+msgid "Vérifier le solde"
+msgstr "Check balance"
+
+msgid "Vérifiez le résultat avant de publier, puis téléchargez votre vidéo doublée pour votre chaîne, votre formation ou votre site."
+msgstr "Check the result before publishing, then download your dubbed video for your channel, course or website."
+
+msgid "Waveform non analysée pour cette version doublée."
+msgstr "Waveform not analyzed for this dubbed version."
+
+msgid "Waveform non analysée pour cette vidéo stockée."
+msgstr "Waveform not analyzed for this stored video."
+
+msgid "ajoutés à votre portefeuille après confirmation"
+msgstr "added to your wallet after confirmation"
+
+msgid "biographie"
+msgstr "bio"
+
+msgid "commence ici"
+msgstr "starts here"
+
+msgid "commence ici."
+msgstr "starts here."
+
+msgid "confirmé"
+msgstr "confirmed"
+
+msgid "crédits"
+msgstr "credits"
+
+msgid "crédits Murf"
+msgstr "Murf credits"
+
+msgid "crédits consommés pour ce projet."
+msgstr "credits used for this project."
+
+msgid "crédits consommés. Les crédits des langues non produites ont été libérés."
+msgstr "credits used. Credits for languages that were not produced have been released."
+
+msgid "crédits disponibles"
+msgstr "available credits"
+
+msgid "crédits ou moins."
+msgstr "credits or less."
+
+msgid "crédits réservés pour ce projet."
+msgstr "credits reserved for this project."
+
+msgid "crédits réservés pour vos doublages en cours."
+msgstr "credits reserved for your active dubbing jobs."
+
+msgid "crédits réservés."
+msgstr "credits reserved."
+
+msgid "crédits vendus ·"
+msgstr "credits sold ·"
+
+msgid "créé le"
+msgstr "created on"
+
+msgid "de connexion"
+msgstr "sign-in"
+
+msgid "disponibles"
+msgstr "available"
+
+msgid "doublage"
+msgstr "dubbing"
+
+msgid "d’inscription"
+msgstr "sign-up"
+
+msgid "en attente de recharge Murf."
+msgstr "waiting for a Murf top-up."
+
+msgid "espace créatif."
+msgstr "creative workspace."
+
+msgid "jours"
+msgstr "days"
+
+msgid "langue"
+msgstr "language"
+
+msgid "langue sélectionnée"
+msgstr "language selected"
+
+msgid "langue(s)"
+msgstr "language(s)"
+
+msgid "langues"
+msgstr "languages"
+
+msgid "langues de doublage"
+msgstr "dubbing languages"
+
+msgid "langues de doublage disponibles pour vos projets."
+msgstr "dubbing languages available for your projects."
+
+msgid "langues sont disponibles dans le studio. Vous pouvez sélectionner plusieurs langues pour une même vidéo ; les crédits sont calculés par minute entamée et par langue produite."
+msgstr "languages are available in the studio. You can select multiple languages for the same video; credits are calculated per started minute, per output language."
+
+msgid "langues sélectionnées"
+msgstr "languages selected"
+
+msgid "langues."
+msgstr "languages."
+
+msgid "min facturée(s) ×"
+msgstr "billed min ×"
+
+msgid "modifié le"
+msgstr "updated on"
+
+msgid "ou par email"
+msgstr "or by email"
+
+msgid "ou téléchargez la vidéo."
+msgstr "or download the video."
+
+msgid "paiement"
+msgstr "payment"
+
+msgid "parle peut-être une autre langue."
+msgstr "might speak another language."
+
+msgid "photo de profil"
+msgstr "profile picture"
+
+msgid "profil utilisateur"
+msgstr "user profile"
+
+msgid "profils utilisateurs"
+msgstr "user profiles"
+
+msgid "remboursés."
+msgstr "refunded."
+
+msgid "sans frontières."
+msgstr "without borders."
+
+msgid "solde indisponible"
+msgstr "balance unavailable"
+
+msgid "tout simplement."
+msgstr "simply answered."
+
+msgid "utilisateur"
+msgstr "user"
+
+msgid "voix commence ici."
+msgstr "voice starts here."
+
+msgid "· Test"
+msgstr "· Test"
+
+msgid "· dernier solde communiqué."
+msgstr "· last reported balance."
+
+msgid "À bientôt."
+msgstr "See you soon."
+
+msgid "À payer"
+msgstr "Amount due"
+
+msgid "À produire"
+msgstr "To be produced"
+
+msgid "À qui s’adresse le studio ?"
+msgstr "Who is the studio for?"
+
+msgid "À regarder et à télécharger."
+msgstr "Ready to watch and download."
+
+msgid "À renseigner pour convertir les recettes USD en FCFA."
+msgstr "Enter a rate to convert USD revenue to XOF."
+
+msgid "À vérifier"
+msgstr "Needs review"
+
+msgid "Échec"
+msgstr "Failed"
+
+msgid "Échoué"
+msgstr "Failed"
+
+msgid "Écoutez, puis partagez"
+msgstr "Listen, then share"
+
+msgid "État"
+msgstr "Status"
+
+msgid "Évolution des recettes brutes par jour"
+msgstr "Daily gross revenue"
+
+msgid "Évolution des visiteurs uniques par jour"
+msgstr "Daily unique visitors"
+
+msgid "Évolution quotidienne"
+msgstr "Daily trend"
+
+msgid "← Mes doublages"
+msgstr "← My dubbed videos"
+
+msgid "← Mon portefeuille"
+msgstr "← My wallet"
+
+msgid "← Retour à la connexion"
+msgstr "← Back to sign in"
+
+msgid "← Retour à l’accueil"
+msgstr "← Back to home"

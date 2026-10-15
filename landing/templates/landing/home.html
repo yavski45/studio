@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% load static %}
+{% block body_class %}land{% endblock %}
+{% block title %}{{ seo.title }}{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'landing/polish.css' %}?v=20261015-nav">
+{% endblock %}
+{% block content %}
+<header class="header wrap">
+  <a class="brand" href="{% url 'landing:home' %}" aria-label="{% translate "Dublao, accueil" %}">{% include 'includes/brand_logo.html' %}</a>
+  {% include 'includes/language_switcher.html' %}
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu {% include 'landing/_icon.html' with icon='menu' %}</button>
+  <nav id="navigation" aria-label="{% translate "Navigation principale" %}">
+    <details class="solutions-dropdown" x-data @click.outside="$el.open = false" @keydown.escape.stop.prevent="$el.open = false; $refs.solutionsToggle.focus()">
+      <summary x-ref="solutionsToggle" aria-controls="solutions-menu">{% translate "Solutions" %} <span class="solutions-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="solutions-menu" id="solutions-menu">
+        <p class="solutions-menu__label">{% translate "LE DOUBLAGE POUR VOTRE ACTIVITÉ" %}</p>
+        <a href="#solution-createurs" @click="$el.closest('details').open = false"><span class="solutions-menu__icon">{% include "landing/_icon.html" with icon="arrow" %}</span><span><strong>{% translate "Créateurs de contenu" %}</strong><small>{% translate "Faire découvrir vos vidéos à de nouvelles communautés." %}</small></span></a>
+        <a href="#solution-elearning" @click="$el.closest('details').open = false"><span class="solutions-menu__icon">{% include "landing/_icon.html" with icon="book" %}</span><span><strong>{% translate "Formateurs e-learning" %}</strong><small>{% translate "Rendre vos cours accessibles dans d’autres langues." %}</small></span></a>
+        <a href="#solution-entreprises" @click="$el.closest('details').open = false"><span class="solutions-menu__icon">{% include "landing/_icon.html" with icon="business" %}</span><span><strong>{% translate "Entrepreneurs & entreprises" %}</strong><small>{% translate "Présenter votre offre aux clients internationaux." %}</small></span></a>
+        <a class="solutions-menu__all" href="#solutions" @click="$el.closest('details').open = false">{% translate "Voir toutes les solutions" %} <span aria-hidden="true">→</span></a>
+      </div>
+    </details>
+    <a class="landing-studio-entry" href="{% if user.is_authenticated %}{% url 'studio:create' %}{% else %}{% url 'account_signup' %}?next={% url 'studio:create' %}{% endif %}">{% include 'includes/studio_icon.html' %} Studio</a>
+    <a href="#fonctionnement">{% translate "Comment ça marche" %}</a><a href="#tarifs">{% translate "Tarifs" %}</a><a href="#questions">FAQ</a>
+    <a class="landing-mobile-start" href="{% if user.is_authenticated %}{% url 'espace_compte' %}{% else %}{% url 'account_signup' %}{% endif %}">{% if user.is_authenticated %}{% translate "Mon espace" %}{% else %}{% translate "Commencer" %}{% endif %}</a>
+  </nav>
+  <div class="header-actions">{% include 'includes/wallet_link.html' %}<a class="button button-small header-cta" href="{% if user.is_authenticated %}{% url 'espace_compte' %}{% else %}{% url 'account_signup' %}{% endif %}">{% if user.is_authenticated %}{% translate "Mon espace" %}{% else %}{% translate "Commencer" %}{% endif %} <span aria-hidden="true">↗</span></a></div>
+</header>
+<main id="contenu">
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero-photo" src="{% static 'comptes/images/login-scene.jpg' %}" alt="" width="3174" height="3640" fetchpriority="high">
+    <div class="hero-copy">
+      
+      <p class="hero-brand">Dublao</p><h1 id="hero-title">{% translate "Vos vidéos." %}<br><span>{% translate "Dans" %} {{ target_language_count }} {% translate "langues." %}</span></h1>
+      <p class="hero-description">{% translate "Votre voix originale, dans une autre langue. Doublez vos créations, vos formations et vos présentations en conservant la voix de chaque intervenant." %}</p>
+      <div class="hero-actions"><a href="{% if user.is_authenticated %}{% url 'studio:create' %}{% else %}{% url 'account_signup' %}{% endif %}" class="button">{% translate "Doubler ma vidéo" %} <span aria-hidden="true">↗</span></a><a class="text-link" href="#apercu">{% translate "Explorer l’aperçu" %} <span aria-hidden="true">→</span></a></div>
+      
+    </div>
+    
+  </section>
+  <section class="demo-preview" aria-labelledby="preview-title"><div class="product-preview wrap"><div><h2 id="preview-title">{% translate "Importez." %}<br>{% translate "Choisissez." %}<br>{% translate "Faites-vous entendre." %}</h2><p>{% translate "Suivez le traitement de votre vidéo, puis regardez et téléchargez chaque version dans votre espace privé." %}</p><a class="text-link" href="{% if user.is_authenticated %}{% url 'studio:create' %}{% else %}{% url 'account_signup' %}{% endif %}">{% translate "Ouvrir mon studio →" %}</a></div>
+    <div class="studio demo-studio" id="apercu" aria-label="{% translate "Démonstration préenregistrée de doublage" %}">
+      <div class="studio-header"><span>{% include 'includes/studio_icon.html' %} {% translate "La voix originale, dans une autre langue" %}</span></div>
+      <video id="demo-player" class="demo-player" controls playsinline preload="metadata" aria-label="{% translate "Démonstration doublée en coréen" %}" lang="ko" src="{% static 'landing/demo/ko_KR.mp4' %}">{% translate "Votre navigateur ne prend pas en charge la lecture vidéo." %}</video>
+      <div class="demo-language-buttons" role="group" aria-label="{% translate "Langue de lecture" %}">
+        {% for demo in demo_videos %}<button type="button" class="demo-language-button{% if forloop.first %} active{% endif %}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="demo-player" data-demo-source="{% static 'landing/demo/' %}{{ demo.locale }}.mp4" data-demo-label="{{ demo.name }}" data-demo-lang="{{ demo.lang }}"><img src="{% static 'studio/flags/' %}{{ demo.flag }}.svg" alt="" width="28" height="21"><span>{{ demo.name }}</span><svg class="demo-language-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4 4 10-10"/></svg></button>{% endfor %}
+      </div>
+      <p class="demo-note" data-demo-status role="status" aria-live="polite" hidden></p>
+      <noscript><p class="demo-note">{% translate "Ouvrir une version :" %} {% for demo in demo_videos %}<a href="{% static 'landing/demo/' %}{{ demo.locale }}.mp4">{{ demo.name }}</a>{% if not forloop.last %} · {% endif %}{% endfor %}</p></noscript>
+    </div>
+  </div></section>
+  <div class="language-strip"><div class="wrap"><p>{{ target_language_count }} {% translate "LANGUES POUR FAIRE VOYAGER VOTRE CONTENU" %}</p><div class="language-list"><span>{% translate "Bonjour" %}</span><span>Hello</span><span>Hola</span><span>Ciao</span><span>こんにちは</span><span>Olá</span></div></div></div>
+  <div class="wrap"><details class="landing-languages"><summary>{% translate "Découvrir les" %} {{ target_language_count }} {% translate "langues de doublage" %} <span aria-hidden="true">＋</span></summary><ul>{% for language in target_languages %}<li>{{ language.display_name }}</li>{% endfor %}</ul><p>{% translate "Choisissez une ou plusieurs langues pour chaque vidéo dans le studio." %}</p></details></div>
+  <section class="section wrap" id="fonctionnement" aria-labelledby="steps-title">
+    <div class="section-heading"><div><h2 id="steps-title">{% translate "Plus de langues." %}<br>{% translate "Moins de complications." %}</h2></div><p>{% translate "Partez de votre vidéo existante. Retrouvez ses nouvelles versions dans un seul espace." %}</p></div>
+    <div class="steps">
+      <article><span class="step-number">01</span><div class="step-icon">{% include "landing/_icon.html" with icon="up" %}</div><h3>{% translate "Importez votre vidéo" %}</h3><p>{% translate "Votre tutoriel, votre présentation ou votre dernière création. Tout commence avec votre contenu." %}</p></article>
+      <article><span class="step-number">02</span><div class="step-icon">{% include "landing/_icon.html" with icon="translate" %}</div><h3>{% translate "Choisissez vos langues" %}</h3><p>{% translate "Ouvrez la conversation avec de nouvelles audiences, dans les langues qui comptent pour vous." %}</p></article>
+      <article><span class="step-number">03</span><div class="step-icon">{% include "landing/_icon.html" with icon="down" %}</div><h3>{% translate "Écoutez, puis partagez" %}</h3><p>{% translate "Vérifiez le résultat avant de publier, puis téléchargez votre vidéo doublée pour votre chaîne, votre formation ou votre site." %}</p></article>
+    </div>
+  </section>
+  <section class="section wrap benefits" id="possibilites" aria-labelledby="benefits-title">
+    <div class="benefits-copy"><h2 id="benefits-title">{% translate "Votre message." %}<br>{% translate "La même intention." %}</h2><p class="intro">{% translate "Créez une fois. Faites-vous comprendre ailleurs. Dublao est pensé pour rapprocher votre contenu de ceux qui veulent le découvrir." %}</p>
+      <div class="benefit-item"><span>{% include "landing/_icon.html" with icon="audio" %}</span><div><h3>{% translate "Votre voix reste la vôtre" %}</h3><p>{% translate "La voix originale de chaque intervenant est conservée dans les versions doublées. Vos paroles changent de langue, votre identité vocale reste reconnaissable." %}</p></div></div>
+      <div class="benefit-item"><span>{% include "landing/_icon.html" with icon="layers" %}</span><div><h3>{% translate "Un espace pour toutes vos versions" %}</h3><p>{% translate "Retrouvez vos vidéos et leurs déclinaisons dans un studio simple à utiliser." %}</p></div></div>
+      <div class="benefit-item"><span>{% include "landing/_icon.html" with icon="shield" %}</span><div><h3>{% translate "Vos fichiers restent privés" %}</h3><p>{% translate "Un stockage privé et des liens temporaires pour accéder à vos contenus." %}</p></div></div>
+    </div>
+  </section>
+  <section class="section wrap use-cases" id="solutions" aria-labelledby="uses-title">
+    <div class="section-heading"><div><h2 id="uses-title">{% translate "Votre contenu existe déjà." %}<br>{% translate "Ouvrez-lui d’autres portes." %}</h2></div><p>{% translate "Dublao est pensé pour adapter vos vidéos aux personnes que vous souhaitez toucher, dans leur langue." %}</p></div>
+    <div class="use-grid">
+      <article id="solution-createurs">
+        <span>{% include "landing/_icon.html" with icon="arrow" %}</span><p class="use-audience">{% translate "CRÉATEURS DE CONTENU" %}</p><h3>{% translate "Votre communauté peut aller plus loin." %}</h3>
+        <p>{% translate "Une bonne histoire ne s’arrête pas à une seule langue. Donnez une seconde vie à vos vidéos et faites découvrir votre univers à d’autres communautés." %}</p>
+        <ul class="use-benefits"><li>{% translate "Adapter vos vidéos YouTube et vos interviews." %}</li><li>{% translate "Décliner vos tutoriels, Reels et formats courts." %}</li><li>{% translate "Réutiliser vos contenus sans refaire le tournage." %}</li></ul>
+        <div class="use-example"><span>{% translate "PAR EXEMPLE" %}</span><p>{% translate "Votre tutoriel en français devient une version en anglais à partager avec une nouvelle audience." %}</p></div>
+      </article>
+      <article id="solution-elearning">
+        <span>{% include "landing/_icon.html" with icon="book" %}</span><p class="use-audience">{% translate "FORMATEURS EN E-LEARNING" %}</p><h3>{% translate "Transmettez votre savoir dans leur langue." %}</h3>
+        <p>{% translate "La langue peut freiner l’accès à une formation. Adaptez vos leçons enregistrées pour que d’autres apprenants puissent suivre vos explications." %}</p>
+        <ul class="use-benefits"><li>{% translate "Décliner vos cours et modules de formation." %}</li><li>{% translate "Adapter vos tutoriels logiciels et webinaires." %}</li><li>{% translate "Conserver vos supports et votre progression pédagogique." %}</li></ul>
+        <div class="use-example"><span>{% translate "PAR EXEMPLE" %}</span><p>{% translate "Un module de votre formation obtient une version en espagnol, avec les mêmes démonstrations à l’écran." %}</p></div>
+      </article>
+      <article id="solution-entreprises">
+        <span>{% include "landing/_icon.html" with icon="business" %}</span><p class="use-audience">{% translate "ENTREPRENEURS & ENTREPRISES" %}</p><h3>{% translate "Présentez votre offre au-delà des frontières." %}</h3>
+        <p>{% translate "Faites comprendre votre produit à des clients, partenaires et équipes qui parlent d’autres langues, à partir des vidéos que vous utilisez déjà." %}</p>
+        <ul class="use-benefits"><li>{% translate "Localiser vos démonstrations et présentations commerciales." %}</li><li>{% translate "Adapter vos vidéos marketing à de nouveaux marchés." %}</li><li>{% translate "Accompagner vos clients et former vos équipes." %}</li></ul>
+        <div class="use-example"><span>{% translate "PAR EXEMPLE" %}</span><p>{% translate "Votre démonstration produit en français devient une présentation en anglais pour vos prospects à l’étranger." %}</p></div>
+      </article>
+    </div>
+    <div class="solutions-next"><p>{% translate "Quel que soit votre projet, commencez avec les vidéos que vous avez déjà." %}</p><a class="text-link" href="#fonctionnement">{% translate "Découvrir le fonctionnement" %} <span aria-hidden="true">→</span></a></div>
+  </section>
+  <section class="section wrap landing-pricing" id="tarifs" aria-labelledby="pricing-title">
+    <div class="section-heading"><div><h2 id="pricing-title">{% translate "Payez pour vos vidéos." %}<br>{% translate "Sans abonnement." %}</h2></div><p>{% translate "1 crédit par minute entamée et par langue produite. Les nouveaux achats s’ajoutent à votre portefeuille." %}</p></div>
+    {% url 'credits:wallet' as wallet_url %}
+    <div class="pack-list">{% for pack in credit_packs %}<article><h3>{{ pack.name }}</h3><p class="pack-price">{{ pack.usd }}<small>$</small></p><p>{{ pack.quantity }} {% translate "crédits" %}</p><a class="text-link" href="{% if user.is_authenticated %}{{ wallet_url }}?pack={{ pack.key }}{% else %}{% url 'account_signup' %}?next={{ wallet_url|urlencode }}%3Fpack%3D{{ pack.key }}{% endif %}">{% translate "Choisir ce pack ↗" %}</a></article>{% endfor %}</div>
+  </section>
+  <section class="section wrap faq-section" id="questions" aria-labelledby="faq-title"><div><h2 id="faq-title">{% translate "Quelques questions," %}<br>{% translate "tout simplement." %}</h2></div><div class="faq-list">
+    <details open><summary>{% translate "Qu’est-ce que Dublao ?" %} <span aria-hidden="true">+</span></summary><p>{% translate "Dublao est un studio de doublage vidéo multilingue. Importez votre vidéo, choisissez une ou plusieurs langues, puis regardez et téléchargez vos versions doublées." %}</p></details>
+    <details><summary>{% translate "À qui s’adresse le studio ?" %} <span aria-hidden="true">+</span></summary><p>{% translate "Aux créateurs qui veulent faire découvrir leurs vidéos à de nouvelles communautés, aux formateurs qui souhaitent adapter leurs cours et aux entrepreneurs qui présentent leur offre à des clients internationaux." %}</p></details>
+    <details><summary>{% translate "Dans combien de langues puis-je doubler ma vidéo ?" %} <span aria-hidden="true">+</span></summary><p>{{ target_language_count }} {% translate "langues sont disponibles dans le studio. Vous pouvez sélectionner plusieurs langues pour une même vidéo ; les crédits sont calculés par minute entamée et par langue produite." %}</p></details>
+    <details><summary>{% translate "Faut-il tourner une nouvelle vidéo pour chaque langue ?" %} <span aria-hidden="true">+</span></summary><p>{% translate "Le doublage part de votre vidéo existante : les images restent les mêmes et la parole est adaptée dans une autre langue. Avant de publier, prenez le temps de vérifier le sens, les noms propres et les termes techniques." %}</p></details>
+    <details><summary>{% translate "Quelle différence avec les sous-titres ?" %} <span aria-hidden="true">+</span></summary><p>{% translate "Les sous-titres affichent le texte à l’écran. Le doublage permet d’écouter les explications dans une autre langue, notamment pour suivre un tutoriel ou une démonstration sans lire chaque phrase." %}</p></details>
+    <details><summary>{% translate "Le doublage conserve-t-il ma voix ?" %} <span aria-hidden="true">+</span></summary><p>{% translate "Oui. Dublao conserve la voix originale des intervenants pour restituer leurs paroles dans la langue choisie. La parole traduite est générée par l’IA à partir de leur voix, plutôt qu’avec une voix générique choisie dans un catalogue." %}</p></details>
+    <details><summary>{% translate "Mes vidéos seront-elles publiques ?" %} <span aria-hidden="true">+</span></summary><p>{% translate "Vos fichiers sont stockés dans un espace privé. Seul votre compte peut accéder à vos résultats grâce à des liens temporaires." %}</p></details>
+    <details><summary>{% translate "Puis-je déjà doubler une vidéo ?" %} <span aria-hidden="true">+</span></summary><p>{% translate "Oui. Créez votre compte, achetez un pack de crédits et importez votre vidéo dans le studio. Une minute entamée coûte 1 crédit par langue produite." %}</p></details>
+  </div></section>
+  <section class="closing wrap"><span class="closing-star" aria-hidden="true">✳</span><h2>{% translate "Votre prochaine audience" %}<br>{% translate "parle peut-être une autre langue." %}</h2><a class="button" href="{% if user.is_authenticated %}{% url 'studio:create' %}{% else %}{% url 'account_signup' %}{% endif %}">{% translate "Commencer avec Dublao" %} <span aria-hidden="true">↗</span></a></section>
+</main>
+<footer class="footer wrap"><a class="brand" href="{% url 'landing:home' %}">{% include 'includes/brand_logo.html' %}</a><span>© {% now 'Y' %} Dublao</span><a href="#contenu">{% translate "Retour en haut ↑" %}</a></footer>
+{% endblock %}
+
+
+
+
+
+
+
+

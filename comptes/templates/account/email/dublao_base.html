@@ -1,0 +1,20 @@
+
+{% load i18n %}
+<!DOCTYPE html>
+{% get_current_language as email_language %}<html lang="{{ email_language }}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>{% block email_title %}{% translate "Votre compte Dublao" %}{% endblock %}</title></head>
+<body style="margin:0;padding:0;background:#f7faf8;font-family:Arial,Helvetica,sans-serif;color:#102c23">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0">{% block preheader %}{% translate "Votre espace Dublao, en toute simplicité." %}{% endblock %}</div>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f7faf8"><tr><td align="center" style="padding:40px 16px">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:560px">
+<tr><td style="padding:0 8px 24px;font-size:28px;font-weight:bold;letter-spacing:-1px">dublao<span style="color:#006b4f">.</span></td></tr>
+<tr><td style="background:#fff;border:1px solid #d7e6de;border-radius:24px;padding:36px 28px">
+<div style="display:inline-block;background:#e5f2eb;border-radius:16px;padding:15px 19px;color:#006b4f;font-size:28px" aria-hidden="true">✉</div>
+<p style="margin:26px 0 12px;color:#006b4f;font-size:10px;font-weight:bold;letter-spacing:2px">{% translate "VOTRE ESPACE DUBLAO" %}</p>
+<h1 style="margin:0 0 18px;font-size:28px;line-height:1.25;letter-spacing:-1px">{% block heading %}{% endblock %}</h1>
+<div style="font-size:15px;line-height:1.8;color:#586b62">{% block email_content %}{% endblock %}</div>
+{% block email_action %}{% endblock %}
+<div style="margin-top:28px;padding-top:22px;border-top:1px solid #e8ebdf;font-size:12px;line-height:1.8;color:#586b62">{% block email_note %}{% endblock %}</div>
+</td></tr>
+<tr><td align="center" style="padding:24px 8px;font-size:11px;line-height:1.8;color:#7d8678">{% translate "Des histoires qui traversent les frontières." %}<br>© {% now 'Y' %} Dublao</td></tr>
+</table></td></tr></table>
+</body></html>

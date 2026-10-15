@@ -1,0 +1,16 @@
+{% load i18n %}
+<meta name="robots" content="{{ seo.robots|default:'noindex, nofollow' }}">
+{% if seo.description %}<meta name="description" content="{{ seo.description }}">{% endif %}
+{% if seo.enabled %}
+<link rel="canonical" href="{{ seo.canonical }}">
+<link rel="alternate" hreflang="fr" href="{{ seo.french_url }}">
+<link rel="alternate" hreflang="en" href="{{ seo.english_url }}">
+<link rel="alternate" hreflang="x-default" href="{{ seo.default_url }}">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Dublao">
+<meta property="og:title" content="{{ seo.title }}"><meta property="og:description" content="{{ seo.description }}">
+<meta property="og:url" content="{{ seo.canonical }}"><meta property="og:image" content="{{ seo.image }}">
+<meta property="og:locale" content="{{ seo.locale }}"><meta property="og:locale:alternate" content="{{ seo.other_locale }}">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="{{ seo.title }}">
+<meta name="twitter:description" content="{{ seo.description }}"><meta name="twitter:image" content="{{ seo.image }}">
+<script type="application/ld+json">{{ seo.structured_data|safe }}</script>
+{% endif %}

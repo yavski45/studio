@@ -1,0 +1,39 @@
+
+{% load i18n %}
+{% include 'supervision/_murf_alert.html' %}
+<form class="dash-filters" method="get" action="{% url 'supervision:dashboard' %}" hx-get="{% url 'supervision:dashboard' %}" hx-target="#admin-report" hx-push-url="true" hx-disabled-elt="find button">
+  <div><label for="id_period">{% translate "Période" %}</label>{{ form.period }}</div>
+  <div><label for="id_currency">{% translate "Afficher en" %}</label>{{ form.currency }}</div>
+  <div class="rate-field"><label for="id_rate">{% translate "Taux : FCFA pour 1 $" %}</label>{{ form.rate }}<small>{% translate "À renseigner pour convertir les recettes USD en FCFA." %}</small></div>
+  <button class="button" type="submit"><span class="auth-idle">{% translate "Actualiser ↗" %}</span><span class="auth-loading">{% translate "Chargement…" %}</span></button>
+  {% for field in form %}{% for error in field.errors %}<p class="dash-error" role="alert">{{ error }}</p>{% endfor %}{% endfor %}
+</form>
+<div class="dash-period"><span>{{ first|date:'d M Y' }} — {{ today|date:'d M Y' }}</span><span>{% translate "Paiements live confirmés uniquement · mise à jour" %} {{ updated_at|date:'H:i' }}</span></div>
+<section class="dash-metrics" aria-label="{% translate "Indicateurs de la période" %}">
+  {% for metric in metrics %}<div><h2>{{ metric.label }}</h2><p>{% if metric.money %}{{ metric.value|floatformat:2 }} <span>{{ unit }}</span>{% else %}{{ metric.value }}{% endif %}</p></div>{% endfor %}
+</section>
+<div class="dash-finance-note" x-data="{ expanded: false }">
+  <p>{{ payment_count }} {% translate "paiement" %}{{ payment_count|pluralize }} {% translate "confirmé" %}{{ payment_count|pluralize }} · {{ credits_sold }} {% translate "crédits vendus ·" %} {{ refunded|floatformat:2 }} {{ unit }} {% translate "remboursés." %}</p>
+  <button type="button" @click="expanded = !expanded" :aria-expanded="expanded" aria-controls="financial-scope">{% translate "Comment lire ces chiffres" %} <span aria-hidden="true">↓</span></button>
+  <p id="financial-scope" x-show="expanded" x-cloak>{% translate "Les recettes correspondent aux prix des packs achetés. Les remboursements sont déduits à leur date de confirmation. Les frais Genius Pay, les coûts Murf et les autres dépenses ne sont pas déduits : ce montant n’est pas un bénéfice." %}</p>
+  {% if currency == 'XOF' %}<p>{% translate "Conversion indicative au taux saisi : 1 $ =" %} {{ rate }} {% translate "FCFA. Les montants réellement réglés apparaissent dans l’historique." %}</p>{% endif %}
+</div>
+<section class="dash-charts" aria-label="{% translate "Évolution quotidienne" %}">
+  <div><div class="chart-heading"><h2>{% translate "Fréquentation" %}</h2><span>{% translate "Visiteurs / jour · maximum" %} {{ visitor_max }}</span></div>
+    <svg class="dash-chart" viewBox="0 0 640 184" role="img" aria-label="{% translate "Évolution des visiteurs uniques par jour" %}"><path d="M16 28 H624 M16 96 H624 M16 164 H624" class="chart-grid"/><polyline points="{{ visitor_points }}" class="chart-line"/></svg>
+    <div class="chart-dates"><span>{{ first|date:'d M' }}</span><span>{{ today|date:'d M' }}</span></div>
+  </div>
+  <div><div class="chart-heading"><h2>{% translate "Recettes brutes" %}</h2><span>{{ unit }} {% translate "/ jour · maximum" %} {{ income_max|floatformat:2 }}</span></div>
+    <svg class="dash-chart" viewBox="0 0 640 184" role="img" aria-label="{% translate "Évolution des recettes brutes par jour" %}"><path d="M16 28 H624 M16 96 H624 M16 164 H624" class="chart-grid"/><polyline points="{{ income_points }}" class="chart-line"/></svg>
+    <div class="chart-dates"><span>{{ first|date:'d M' }}</span><span>{{ today|date:'d M' }}</span></div>
+  </div>
+</section>
+<p class="dash-note">{% translate "Visiteurs estimés par navigateur, grâce à un identifiant aléatoire. Les visites administrateur, les robots identifiables et les rafraîchissements HTMX sont exclus." %} {% if tracking_started %}{% translate "Le suivi a commencé le" %} {{ tracking_started|date:'d/m/Y' }}.{% else %}{% translate "Le suivi commence avec les prochaines visites." %}{% endif %} {% translate "Aucun historique antérieur n’est reconstitué." %}</p>
+<section class="dash-table-section"><div class="chart-heading"><h2>{% translate "Derniers achats confirmés" %}</h2><a class="text-link" href="{% url 'admin:credits_creditpurchase_changelist' %}">{% translate "Tous les achats ↗" %}</a></div>
+  <div class="dash-table-scroll"><table><thead><tr><th>{% translate "Date" %}</th><th>{% translate "Pack" %}</th><th>{% translate "Crédits" %}</th><th>{% translate "Prix du pack" %}</th><th>{% translate "Montant réglé" %}</th><th>{% translate "État" %}</th></tr></thead><tbody>
+  {% for purchase in purchases %}<tr><td>{{ purchase.paid_at|date:'d/m/Y H:i' }}</td><td>{{ purchase.pack|capfirst }}</td><td>{{ purchase.quantity }}</td><td>{{ purchase.price_usd|floatformat:2 }} $</td><td>{% if purchase.payment_amount != None %}{{ purchase.payment_amount|floatformat:2 }} {{ purchase.currency }}{% else %}{% translate "Non renseigné" %}{% endif %}</td><td>{% if purchase.refunded_at %}{% translate "Remboursé" %}{% else %}{% translate "Confirmé" %}{% endif %}</td></tr>{% empty %}<tr><td colspan="6" class="dash-empty">{% translate "Aucun paiement live confirmé sur cette période." %}</td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+<section class="dash-table-section" x-data="{ open: false }"><button class="daily-toggle" type="button" @click="open = !open" :aria-expanded="open" aria-controls="daily-values">{% translate "Détail des" %} {{ days }} {% translate "jours" %} <span aria-hidden="true">↓</span></button>
+  <div id="daily-values" x-show="open" x-cloak class="dash-table-scroll"><table><thead><tr><th>{% translate "Date" %}</th><th>{% translate "Visiteurs" %}</th><th>{% translate "Pages vues" %}</th><th>{% translate "Recettes brutes" %}</th><th>{% translate "Remboursements" %}</th></tr></thead><tbody>{% for row in rows %}<tr><td>{{ row.day|date:'d/m/Y' }}</td><td>{{ row.visitors }}</td><td>{{ row.views }}</td><td>{{ row.revenue|floatformat:2 }} {{ unit }}</td><td>{{ row.refunds|floatformat:2 }} {{ unit }}</td></tr>{% endfor %}</tbody></table></div>
+</section>

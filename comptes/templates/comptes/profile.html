@@ -1,0 +1,12 @@
+{% extends 'studio/base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Mon profil — Dublao" %}{% endblock %}
+{% block studio_content %}
+<div class="mx-auto max-w-3xl">
+  <p class="eyebrow">{% translate "VOTRE COMPTE" %}</p>
+  <h1 class="!text-4xl !tracking-tight">{% translate "Mon profil" %}<span class="text-[#60dda5]">.</span></h1>
+  <p class="mt-4 text-sm leading-7 text-[#a5b7ad]">{% translate "Un visage, un nom, quelques mots. Personnalisez votre espace Dublao." %}</p>
+  {% include 'comptes/_profile_card.html' %}
+</div>
+{% endblock %}

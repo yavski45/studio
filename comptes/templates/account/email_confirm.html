@@ -1,0 +1,11 @@
+{% extends 'comptes/status.html' %}
+{% load i18n %}
+
+{% block status_title %}{% translate "Confirmation de l’email" %}{% endblock %}
+{% block status_content %}
+<h2 class="!text-3xl !tracking-tight">{% translate "Confirmez votre email." %}</h2>
+<p class="mt-4 text-sm leading-7 text-[#a5b7ad]">{% translate "Une dernière étape pour garder le contact avec Dublao." %}</p>
+{% if confirmation %}<p class="mt-4 break-all text-sm text-[#a5b7ad]">{% translate "Confirmer l’adresse" %} {{ confirmation.email_address.email }} ?</p><form method="post" action="{% url 'account_confirm_email' confirmation.key %}" class="mt-6">{% csrf_token %}<button class="button" type="submit">{% translate "Confirmer mon adresse" %}</button></form>
+{% else %}<p class="mt-4 text-sm text-[#a5b7ad]">{% translate "Ce lien a expiré ou a déjà été utilisé." %}</p>{% endif %}
+{% endblock %}
+   

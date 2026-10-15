@@ -1,0 +1,48 @@
+
+{% load i18n %}
+<section id="auth-card" class="rounded-3xl border border-[#2b4035] bg-[#131e19] p-6 shadow-[0_12px_40px_#22341c08] sm:p-9" x-data="{ showPassword: false }" aria-labelledby="auth-title">
+  <p class="mb-3 text-[10px] font-bold tracking-[.16em] text-[#60dda5]">{% translate "BIENVENUE DANS VOTRE ESPACE" %}</p>
+  <h2 id="auth-title" class="!text-3xl !tracking-tight">{% if auth_mode == 'signup' %}{% translate "Créez votre compte" %}{% elif auth_mode == 'reset' %}{% translate "Un nouveau départ" %}{% else %}{% translate "Heureux de vous revoir" %}{% endif %}</h2>
+  <p class="mb-6 mt-3 text-sm leading-6 text-[#a5b7ad]">{% if auth_mode == 'signup' %}{% translate "Une adresse email, un mot de passe, et votre aventure commence." %}{% elif auth_mode == 'reset' %}{% translate "Indiquez votre email pour recevoir un lien de réinitialisation." %}{% else %}{% translate "Connectez-vous pour retrouver votre espace Dublao." %}{% endif %}</p>
+  {% if auth_mode != 'reset' %}
+    {% if google_enabled %}
+      <form method="post" action="{% url 'google_login' %}" class="mb-5">
+        {% csrf_token %}
+        {% if redirect_field_value %}<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">{% endif %}
+        <button class="flex w-full items-center justify-center gap-3 rounded-xl border border-[#2b4035] bg-[#131e19] px-4 py-3 text-sm font-semibold transition hover:bg-[#0b1210]" type="submit"><span class="text-lg font-bold text-[#4285f4]" aria-hidden="true">G</span> {% translate "Continuer avec Google" %}</button>
+      </form>
+    {% else %}
+      <button disabled class="mb-2 flex w-full cursor-not-allowed items-center justify-center gap-3 rounded-xl border border-[#2b4035] bg-[#0b1210] px-4 py-3 text-sm text-[#a5b7ad]" type="button"><span class="text-lg font-bold" aria-hidden="true">G</span> {% translate "Continuer avec Google" %}</button>
+      <p class="mb-5 text-center text-xs text-[#a5b7ad]">{% translate "La connexion Google sera disponible prochainement." %}</p>
+    {% endif %}
+    <div class="mb-5 flex items-center gap-4 text-xs text-[#a5b7ad]"><span class="h-px flex-1 bg-[#2b4035]"></span>{% translate "ou par email" %}<span class="h-px flex-1 bg-[#2b4035]"></span></div>
+  {% endif %}
+  <div id="auth-network-error" role="alert" hidden class="mb-4 rounded-xl bg-[#301d1d] p-3 text-sm text-[#ffaaa0]">{% translate "La demande n’a pas abouti. Réessayez dans un instant." %}</div>
+  {% if form.non_field_errors %}<div role="alert" class="mb-4 rounded-xl border border-[#713d3d] bg-[#301d1d] p-3 text-sm text-[#ffaaa0]">{{ form.non_field_errors }}</div>{% endif %}
+  <form method="post" action="{{ request.path }}" hx-post="{{ request.path }}" hx-target="#auth-card" hx-swap="outerHTML" hx-disabled-elt="find button[type='submit']" class="space-y-4">
+    {% csrf_token %}
+    {% if redirect_field_value %}<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">{% endif %}
+    {% for field in form %}
+      {% if field.is_hidden %}{{ field }}{% elif field.name == 'remember' %}
+        <label class="flex items-center gap-2 text-xs text-[#a5b7ad]">{{ field }} {{ field.label }}</label>
+      {% else %}
+        <div>
+          <label for="{{ field.id_for_label }}" class="mb-2 block text-sm font-medium">{{ field.label }}</label>
+          <div class="relative">
+            {{ field }}
+            {% if field.name == 'password' or field.name == 'password1' or field.name == 'password2' %}
+              <button type="button" @click="showPassword = !showPassword" :aria-pressed="showPassword" class="absolute inset-y-0 right-3 text-xs font-medium text-[#60dda5]" x-text="showPassword ? 'Masquer' : '{% translate "Afficher" %}'" aria-label="{% translate "Afficher ou masquer le mot de passe" %}">{% translate "Afficher" %}</button>
+            {% endif %}
+          </div>
+          {% if field.errors %}<div id="{{ field.auto_id }}_error" role="alert" class="mt-2 text-xs leading-5 text-[#ffaaa0]">{{ field.errors }}</div>{% endif %}
+          {% if field.help_text %}<div id="{{ field.auto_id }}_helptext" class="mt-2 text-[11px] leading-5 text-[#a5b7ad]">{% if auth_mode == 'signup' and field.name == 'password1' %}<details><summary class="cursor-pointer">{% translate "Conseils pour choisir votre mot de passe" %}</summary><div class="mt-2">{{ field.help_text|safe }}</div></details>{% else %}{{ field.help_text|safe }}{% endif %}</div>{% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% if auth_mode == 'login' %}<p class="text-right text-xs"><a href="{% url 'account_reset_password' %}" class="font-medium text-[#60dda5] hover:underline">{% translate "Mot de passe oublié ?" %}</a></p>{% endif %}
+    <button type="submit" class="auth-submit flex w-full items-center justify-center gap-3 rounded-xl bg-[#60dda5] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-[#60dda5] disabled:cursor-wait disabled:opacity-60">
+      <span class="auth-idle">{% if auth_mode == 'signup' %}{% translate "Créer mon compte" %}{% elif auth_mode == 'reset' %}{% translate "Envoyer le lien" %}{% else %}{% translate "Me connecter" %}{% endif %}</span><span class="auth-loading">{% translate "Un instant…" %}</span><span aria-hidden="true">↗</span>
+    </button>
+  </form>
+  <p class="mb-0 mt-6 text-center text-xs text-[#a5b7ad]">{% if auth_mode == 'signup' %}{% translate "Déjà un compte ?" %} <a href="{% url 'account_login' %}{% if redirect_field_value %}?next={{ redirect_field_value|urlencode }}{% endif %}" class="font-semibold text-[#60dda5]">{% translate "Se connecter" %}</a>{% elif auth_mode == 'reset' %}<a href="{% url 'account_login' %}" class="font-semibold text-[#60dda5]">{% translate "← Retour à la connexion" %}</a>{% else %}{% translate "Pas encore de compte ?" %} <a href="{% url 'account_signup' %}{% if redirect_field_value %}?next={{ redirect_field_value|urlencode }}{% endif %}" class="font-semibold text-[#60dda5]">{% translate "Créer un compte" %}</a>{% endif %}</p>
+</section>

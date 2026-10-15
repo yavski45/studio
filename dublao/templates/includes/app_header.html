@@ -1,0 +1,15 @@
+
+{% load i18n %}
+<header class="app-header">
+  <div class="app-header__inner">
+    <a class="brand" href="{% url 'landing:home' %}" aria-label="{% translate "Dublao, accueil" %}">{% include 'includes/brand_logo.html' %}</a>
+    <nav class="app-navigation" aria-label="{% translate "Navigation du studio" %}">{% include 'includes/app_nav.html' %}</nav>
+    {% include 'includes/wallet_link.html' %}
+    {% include 'includes/language_switcher.html' %}
+    <details class="app-account" x-data @click.outside="$el.open = false" @keydown.escape="$el.open = false; $refs.toggle.focus()">
+      <summary x-ref="toggle"><span class="app-avatar" aria-hidden="true">{{ user.first_name|default:user.email|slice:':1'|upper }}</span><span class="app-account__label">{% translate "Mon compte" %}</span><span aria-hidden="true">⌄</span></summary>
+      <div class="app-account__menu"><a href="{% url 'espace_compte' %}">{% translate "Mon espace" %}</a><a href="{% url 'profil_compte' %}">{% translate "Modifier mon profil" %}</a><form method="post" action="{% url 'account_logout' %}">{% csrf_token %}<button type="submit">{% translate "Se déconnecter" %}</button></form></div>
+    </details>
+    <details class="app-mobile-menu"><summary aria-label="{% translate "Menu de navigation" %}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg></summary><nav aria-label="{% translate "Navigation mobile" %}">{% include 'includes/app_nav.html' %}</nav></details>
+  </div>
+</header>

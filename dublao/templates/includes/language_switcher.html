@@ -1,0 +1,11 @@
+{% load i18n %}
+{% get_current_language as current_language %}
+<form class="language-switcher" action="{% url 'set_language' %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="next" value="{{ language_next_url|default:request.get_full_path }}">
+  <label class="sr-only" for="{{ selector_id|default:'interface-language' }}">{% translate 'Langue de l’interface' %}</label>
+  <select id="{{ selector_id|default:'interface-language' }}" name="language" data-language-selector onchange="this.form.requestSubmit()" aria-label="{% translate 'Langue de l’interface' %}">
+    <option value="fr" lang="fr"{% if current_language == 'fr' %} selected{% endif %}>FR</option>
+    <option value="en" lang="en"{% if current_language == 'en' %} selected{% endif %}>EN</option>
+  </select>
+</form>

@@ -1,0 +1,5 @@
+{% extends 'comptes/status.html' %}
+{% load i18n %}
+
+{% block status_title %}{% translate "Déconnexion" %}{% endblock %}
+{% block status_content %}<h2 class="!text-3xl !tracking-tight">{% translate "À bientôt." %}</h2><p class="mt-4 text-sm text-[#a5b7ad]">{% translate "Souhaitez-vous vous déconnecter ?" %}</p><form method="post" action="{% url 'account_logout' %}" class="mt-6">{% csrf_token %}<button class="button" type="submit">{% translate "Me déconnecter" %}</button></form>{% endblock %}

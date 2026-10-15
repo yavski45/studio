@@ -1,0 +1,16 @@
+env
+venv
+.venv
+.env
+.env.*
+.git
+.codex
+.agents
+.vscode
+__pycache__
+**/__pycache__
+*.vscode-backup
+preview
+staticfiles
+media
+*.sqlite3

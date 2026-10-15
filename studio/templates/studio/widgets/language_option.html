@@ -1,0 +1,8 @@
+<label class="language-option" x-show="!$data.languageSearch || $el.textContent.toLocaleLowerCase('fr').includes($data.languageSearch.toLocaleLowerCase('fr'))"{% if widget.attrs.id %} for="{{ widget.attrs.id }}"{% endif %}>
+  {% include 'django/forms/widgets/input.html' %}
+  <span class="language-option__body">
+    {% if widget.flag_url %}<img class="language-flag" src="{{ widget.flag_url }}" alt="" width="28" height="21" loading="lazy">{% endif %}
+    <span>{{ widget.label }}</span>
+    <svg class="language-option__check" aria-hidden="true" width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="m4 10 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </span>
+</label>

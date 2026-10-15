@@ -1,0 +1,9 @@
+{% extends 'comptes/status.html' %}
+{% load i18n %}
+
+{% block status_title %}{% translate "Vérification de l’email" %}{% endblock %}
+{% block status_content %}
+<div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#15271d] text-3xl text-[#60dda5]" aria-hidden="true">✉</div>
+<p class="eyebrow">{% translate "PLUS QU’UNE ÉTAPE" %}</p><h2 class="!text-3xl !tracking-tight">{% translate "Un email vous attend." %}</h2><p class="mt-4 text-sm leading-7 text-[#a5b7ad]">{% translate "Ouvrez le lien de confirmation reçu dans votre boîte mail pour confirmer votre adresse." %}</p>
+<div class="mt-6 rounded-2xl bg-[#0b1210] p-4 text-xs leading-6 text-[#a5b7ad]">{% translate "Vous ne le trouvez pas ? Vérifiez les courriers indésirables. Le message peut prendre quelques instants pour arriver." %}</div>
+{% endblock %}

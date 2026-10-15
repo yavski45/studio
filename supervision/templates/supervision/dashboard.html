@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% load static %}
+{% block title %}{% translate "Administration — Dublao" %}{% endblock %}
+{% block extra_head %}<link rel="stylesheet" href="{% static 'supervision/dashboard.css' %}">{% endblock %}
+{% block content %}
+<div class="dashboard">
+  <header class="dash-header"><a class="brand" href="{% url 'landing:home' %}">{% include 'includes/brand_logo.html' %}</a><nav aria-label="{% translate "Administration" %}"><a class="current" href="{% url 'supervision:dashboard' %}" aria-current="page">{% translate "Vue d’ensemble" %}</a><a href="{% url 'admin:index' %}">{% translate "Gestion Django ↗" %}</a><a href="{% url 'studio:index' %}">Studio</a></nav>{% include 'includes/language_switcher.html' %}</header>
+  <main id="contenu" class="dash-main">
+    <div class="dash-title"><div><p class="eyebrow">{% translate "DUBLAO · ADMINISTRATION" %}</p><h1>{% translate "Visiteurs &amp; recettes" %}</h1></div><span class="dash-access">{% translate "Accès administrateur" %}</span></div>
+    <div id="admin-report" aria-live="polite">{% include 'supervision/_report.html' %}</div>
+  </main>
+</div>
+{% endblock %}

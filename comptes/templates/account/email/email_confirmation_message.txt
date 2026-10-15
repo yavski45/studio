@@ -1,0 +1,11 @@
+
+{% load i18n %}
+{% blocktranslate %}Bonjour,
+
+Confirmez votre adresse email pour votre compte Dublao.{% endblocktranslate %}
+{% if code %}{% translate "Votre code de confirmation :" %} {{ code }}{% else %}{% translate "Ouvrez ce lien :" %}
+{{ activate_url }}{% endif %}
+
+{% blocktranslate %}Si vous n'avez pas créé de compte Dublao, ignorez cet email.
+
+L'équipe Dublao{% endblocktranslate %}

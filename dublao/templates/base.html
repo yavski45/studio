@@ -1,0 +1,46 @@
+
+{% load i18n %}
+{% load static i18n %}
+{% get_current_language as interface_language %}
+<!DOCTYPE html>
+<html lang="{{ interface_language }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'includes/seo_meta.html' %}
+    <meta name="theme-color" content="#60dda5">
+    <title>{% block title %} Dublao AI {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'landing/style.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/brand.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'landing/images/dublao-logo-green.png' %}">
+    <style>[x-cloak], .auth-loading {display:none!important} .htmx-request .auth-idle {display:none} .htmx-request .auth-loading {display:inline!important}</style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.11/dist/htmx.min.js" integrity="sha384-2OatzQy1H+Zd/IIrjr1TcuDGqLXeHhbooAyJY1KdQMKnr4LZ22k31GBLdYKHmVjg" crossorigin="anonymous" defer></script>
+    <script src="{% url 'javascript-catalog' %}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js" defer></script>
+    <script src="{% static 'comptes/auth.js' %}" defer></script>
+    <script src="{% static 'landing/site.js' %}?v=20261014-navigation" defer></script>
+    {% block extra_head %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'landing/theme.css' %}?v=20261015-nav">
+</head>
+<body class="dublao-ui {% block body_class %}{% endblock %}">
+
+
+<a class="skip-link" href="#contenu">{% translate "Aller au contenu" %}</a>
+{% if messages %}
+<div class="mx-auto mt-6 max-w-5xl space-y-2 px-6" aria-live="polite">
+  {% for message in messages %}
+  <p role="{% if message.level >= 30 %}alert{% else %}status{% endif %}" class="rounded-xl border px-4 py-3 text-sm {% if message.level >= 30 %}border-[#6d5631] bg-[#30271a] text-[#f1cc90]{% else %}border-[#355b46] bg-[#1a3528] text-[#edf5f0]{% endif %}">{{ message }}</p>
+  {% endfor %}
+</div>
+{% endif %}
+    
+
+
+    
+    {% block content %}
+        
+    {% endblock content %}
+        
+</body>
+</html> 

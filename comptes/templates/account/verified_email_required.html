@@ -1,0 +1,12 @@
+{% extends 'comptes/status.html' %}
+{% load i18n %}
+
+{% block status_title %}{% translate "Confirmez votre adresse email" %}{% endblock %}
+{% block status_content %}
+<div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#15271d] text-3xl text-[#60dda5]" aria-hidden="true">✉</div>
+<h2 class="!text-3xl !tracking-tight">{% translate "Confirmez votre adresse email." %}</h2>
+<p class="mt-4 text-sm leading-7 text-[#a5b7ad]">{% translate "Votre adresse doit être vérifiée avant de pouvoir accéder à votre espace Dublao." %}</p>
+<p class="mt-4 break-all rounded-xl bg-[#0b1210] p-4 text-sm font-semibold">{{ user.email }}</p>
+<p class="mt-4 text-xs leading-6 text-[#a5b7ad]">{% translate "Ouvrez le lien reçu par email. Pour demander un nouveau lien, reconnectez-vous à votre compte." %}</p>
+<form method="post" action="{% url 'account_logout' %}" class="mt-6">{% csrf_token %}<input type="hidden" name="next" value="{% url 'account_login' %}"><button class="button" type="submit">{% translate "Me reconnecter →" %}</button></form>
+{% endblock %}

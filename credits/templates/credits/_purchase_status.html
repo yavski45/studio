@@ -1,0 +1,28 @@
+
+{% load i18n %}
+<p class="mt-6 text-sm">{{ purchase.price_usd }} $ · {{ purchase.get_status_display }}</p>
+{% if purchase.quoted_at and purchase.currency == 'XOF' %}<p class="mt-2 text-sm text-[#a5b7ad]">{% translate "Montant du paiement :" %} {{ purchase.payment_amount }} {% translate "FCFA, après conversion par Genius Pay." %}</p>{% endif %}
+{% if purchase.status == 'paid' %}
+  <p role="status" class="mt-6 leading-7">{% if purchase.environment == 'sandbox' %}{% translate "Paiement de test confirmé. Aucun crédit utilisable n’a été ajouté." %}{% else %}{% translate "Votre paiement est confirmé. Vos crédits sont disponibles dans votre portefeuille." %}{% endif %}</p>
+  <a class="button mt-6" href="{% url 'credits:wallet' %}">{% translate "Voir mon portefeuille →" %}</a>
+{% else %}
+  <p role="status" class="mt-6 text-sm leading-7 text-[#a5b7ad]">
+  {% if purchase.error_code == 'PAYMENT_CURRENCY_MISMATCH' %}{% translate "La devise renvoyée par Genius Pay ne correspond pas à celle de ce pack. Contactez l’équipe Dublao avant de payer à nouveau." %}
+  {% elif purchase.error_code == 'PAYMENT_AMOUNT_MISMATCH' %}{% translate "Le montant renvoyé par Genius Pay ne correspond pas au prix de ce pack. Contactez l’équipe Dublao avant de payer à nouveau." %}
+  {% elif purchase.error_code == 'PAYMENT_IDENTITY_MISMATCH' or purchase.error_code == 'PAYMENT_ENVIRONMENT_MISMATCH' or purchase.error_code == 'PAYMENT_MISMATCH' %}{% translate "Les informations renvoyées par Genius Pay ne correspondent pas à cet achat. Ce paiement nécessite une vérification. Contactez l’équipe Dublao avant de payer à nouveau." %}
+  {% elif purchase.status == 'review' %}{% translate "Cette tentative nécessite une vérification. Contactez l’équipe Dublao avant de payer à nouveau." %}
+  {% elif purchase.status == 'failed' %}{% translate "Le paiement n’a pas abouti. Aucun crédit n’a été ajouté." %}
+  {% else %}{% translate "Nous attendons la confirmation de Genius Pay. Vous pouvez vérifier à nouveau dans un instant." %}{% endif %}
+  </p>
+  {% if payment_mode_matches and purchase.provider_reference and not purchase.refunded_at %}
+    <form method="post" class="mt-6" action="{% url 'credits:verify' purchase.pk %}"
+          hx-post="{% url 'credits:verify' purchase.pk %}" hx-target="#purchase-status" hx-swap="innerHTML"
+          hx-trigger="{% if auto_verify and purchase.status == 'pending' %}load delay:500ms, {% endif %}submit"
+          hx-disabled-elt="find button">
+      {% csrf_token %}<button id="verify-payment" class="button" type="submit"><span class="auth-idle">{% translate "Vérifier le paiement" %}</span><span class="auth-loading">{% translate "Vérification en cours…" %}</span></button>
+    </form>
+  {% endif %}
+  {% if payment_mode_matches and purchase.status == 'pending' and purchase.checkout_url %}<a class="text-link mt-6 inline-block" href="{{ purchase.checkout_url }}">{% translate "Continuer le paiement ↗" %}</a>{% endif %}
+  {% if not payment_mode_matches %}<p class="mt-6 text-sm">{% translate "Cet achat a été créé dans un autre mode de paiement." %} <a class="text-link" href="{% url 'credits:wallet' %}">{% translate "Créer une nouvelle tentative →" %}</a></p>{% endif %}
+  {% if purchase.status == 'failed' and not purchase.refunded_at %}<a class="button mt-6" href="{% url 'credits:wallet' %}?pack={{ purchase.pack|urlencode }}">{% translate "Réessayer l’achat →" %}</a>{% endif %}
+{% endif %}

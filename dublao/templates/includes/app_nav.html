@@ -1,0 +1,6 @@
+
+{% load i18n %}
+<a href="{% url 'studio:create' %}" {% if request.resolver_match.view_name == 'studio:create' %}aria-current="page"{% endif %} style="display:inline-flex;align-items:center;gap:8px">{% include 'includes/studio_icon.html' %} Studio</a>
+<a href="{% url 'studio:index' %}" {% if request.resolver_match.namespace == 'studio' and request.resolver_match.view_name != 'studio:create' %}aria-current="page"{% endif %}>{% translate "Mes doublages" %}</a>
+<a href="{% url 'profil_compte' %}" {% if request.resolver_match.url_name == 'profil_compte' %}aria-current="page"{% endif %}>{% translate "Mon profil" %}</a>
+{% if user.is_staff %}<a href="{% url 'supervision:dashboard' %}">{% translate "Administration ↗" %}</a>{% endif %}

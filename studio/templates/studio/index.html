@@ -1,0 +1,22 @@
+{% extends 'studio/base.html' %}
+{% load i18n %}
+
+{% load static %}
+{% block title %}{% translate "Mes doublages" %} {% endblock %}
+{% block body_class %}projects{% endblock %}
+{% block extra_head %}{{ block.super }}<link rel="stylesheet" href="{% static 'studio/projects.css' %}">{% endblock %}
+{% block studio_content %}
+<header class="projects-heading"><div><h1>{% translate "Mes doublages" %}</h1><p>{% translate "Vos vidéos, leurs langues et leurs nouvelles audiences." %}<br>{% translate "Retrouvez chaque version dans votre espace privé." %}</p></div><a class="button" href="{% url 'studio:create' %}">{% include 'includes/studio_icon.html' %} {% translate "Ouvrir le studio" %}</a></header>
+<div class="projects-intro"><p>{% translate "Doublez vos vidéos dans" %} <strong>{{ target_language_count }} {% translate "langues" %}</strong>{% translate ", en conservant la voix originale." %}</p><span>{% translate "Regardez · Téléchargez · Partagez" %}</span></div>
+<div id="studio-jobs" class="studio-job-list" {% if has_active_jobs %}hx-get="{% url 'studio:index' %}" hx-select="#studio-jobs" hx-trigger="every 10s" hx-swap="outerHTML" hx-on::before-request="if (Array.from(this.querySelectorAll('video')).some(video => !video.paused)) event.preventDefault()"{% endif %}>
+{% if jobs %}<div class="projects-library-heading"><h2>{% translate "Vos projets récents" %} <span>{{ jobs|length }}</span></h2>{% if has_active_jobs %}<p>{% translate "Les statuts s’actualisent automatiquement" %}</p>{% endif %}</div>{% endif %}
+{% for job in jobs %}
+<section class="studio-job-entry" aria-labelledby="project-{{ job.pk }}">
+<a class="studio-job-row" href="{% url 'studio:detail' job.pk %}"><span class="projects-video-icon" aria-hidden="true">{% include 'includes/studio_icon.html' %}</span><div class="projects-job-title"><h2 id="project-{{ job.pk }}">{{ job.title }}</h2><p><time datetime="{{ job.created_at|date:'c' }}">{{ job.created_at|date:'d/m/Y · H:i' }}</time><span aria-hidden="true"> · </span>{{ job.target_locales|length }} {% translate "langue" %}{{ job.target_locales|length|pluralize }}</p></div><span class="projects-status" data-status="{{ job.status }}">{{ job.get_status_display }}</span><span class="projects-open">{% translate "Ouvrir" %} {% include 'credits/_arrow.html' %}</span></a>
+{% if job.outputs.all %}<details class="studio-result-disclosure"{% if forloop.first %} open{% endif %}><summary>{% translate "Regarder et télécharger les versions" %} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>{% if forloop.first %}{% include 'studio/_outputs.html' with preview_preload='metadata' %}{% else %}{% include 'studio/_outputs.html' %}{% endif %}</details>{% endif %}
+</section>
+{% empty %}
+<section class="projects-empty"><span class="projects-empty-icon" aria-hidden="true">{% include 'includes/studio_icon.html' %}</span><h2>{% translate "Aucun doublage pour le moment." %}</h2><p>{% translate "Votre première vidéo ouvre de nouvelles possibilités." %}<br>{% translate "Importez-la, choisissez vos langues et retrouvez ses versions ici." %}</p><a class="button" href="{% url 'studio:create' %}">{% translate "Importer ma vidéo" %} {% include 'credits/_arrow.html' %}</a></section>
+{% endfor %}
+</div>
+{% endblock %}

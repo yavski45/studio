@@ -1,0 +1,11 @@
+{% extends 'studio/base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Mon achat — Dublao" %}{% endblock %}
+{% block studio_content %}
+<a class="text-link" href="{% url 'credits:wallet' %}">{% translate "← Mon portefeuille" %}</a>
+<div class="max-w-xl py-10">
+  <p class="eyebrow">{% translate "ACHAT DE CRÉDITS" %}</p><h1 class="!text-4xl !tracking-tight">{{ purchase.quantity }} {% translate "crédits" %}</h1>
+  <div id="purchase-status" aria-live="polite">{% include 'credits/_purchase_status.html' with auto_verify=True %}</div>
+</div>
+{% endblock %}
